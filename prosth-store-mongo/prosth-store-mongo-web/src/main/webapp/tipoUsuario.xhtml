@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//ES" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:ui="http://java.sun.com/jsf/facelets">
+    <ui:composition template="/templates/plantilla.xhtml">
+        <ui:define name="contenido">
+            <p:panel id="mainPnl" header="Tipo Usuario" style="width: 50%; margin: auto;">
+                <p:dataTable var="tipoUsuario" value="#{tipoUsuarioBean.tiposUsuario}" 
+                             selectionMode="single" selection="#{tipoUsuarioBean.tipoUsuarioSel}" rowKey="#{tipoUsuario.codigo}">
+                    <p:ajax event="rowSelect" update="@form" />
+                    <p:ajax event="rowUnselect" update="@form" />
+                    <p:column headerText="Codigo">
+                        <h:outputText value="#{tipoUsuario.codigo}" />
+                    </p:column>
+                    <p:column headerText="Descripcion">
+                        <h:outputText value="#{tipoUsuario.descripcion}" />
+                    </p:column>
+                </p:dataTable>
+                <p:messages id="messages" showDetail="true" autoUpdate="true" closable="true" />
+                <p:commandButton value="Agregar" actionListener="#{tipoUsuarioBean.agregar()}" update="@form"/>
+                <p:commandButton id="modBtn" value="Modificar" actionListener="#{tipoUsuarioBean.modificar()}" update="@form" disabled="#{tipoUsuarioBean.tipoUsuarioSel eq null}"/>
+                <p:commandButton value="Eliminar" actionListener="#{tipoUsuarioBean.eliminar()}" update="@form" disabled="#{tipoUsuarioBean.tipoUsuarioSel eq null}" >
+                    <p:confirm header="Confirmaci&#243;n" message="Desea eliminar el Tipo de Usuario: #{tipoUsuarioBean.tipoUsuarioSel.descripcion}}" icon="ui-icon-alert" />
+                </p:commandButton>
+                <p:panel header="#{tipoUsuarioBean.titulo} Tipo Usuario" visible="#{tipoUsuarioBean.habilitaForm}">
+                    <p:panelGrid columns="1">
+                        <p:outputLabel for="codigo" value="Codigo" />
+                        <p:inputText id="codigo" value="#{tipoUsuarioBean.tipoUsuario.codigo}" disabled="#{tipoUsuarioBean.enModificar}" />
+                        <p:outputLabel for="descripcion" value="Descripcion" />
+                        <p:inputText id="descripcion" value="#{tipoUsuarioBean.tipoUsuario.descripcion}"  />
+                    </p:panelGrid>
+                    <p:commandButton value="Aceptar" actionListener="#{tipoUsuarioBean.guardar}" update="@form" />
+                    <p:commandButton value="Cancelar" actionListener="#{tipoUsuarioBean.cancelar}" update="@form" />
+
+                </p:panel>
+
+            </p:panel>
+            <p:confirmDialog global="true" showEffect="fade" hideEffect="fade">
+                <p:commandButton value="Si" type="button" styleClass="ui-confirmdialog-yes" icon="ui-icon-check" />
+                <p:commandButton value="No" type="button" styleClass="ui-confirmdialog-no" icon="ui-icon-close" />
+            </p:confirmDialog>
+        </ui:define>
+    </ui:composition>
+</html>

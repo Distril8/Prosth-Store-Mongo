@@ -7,6 +7,8 @@ package ec.edu.espe.distribuidas.prosth.mongo.model;
 
 import ec.edu.espe.distribuidas.nosql.mongo.BaseEntity;
 import org.mongodb.morphia.annotations.Entity;
+import org.mongodb.morphia.annotations.IndexOptions;
+import org.mongodb.morphia.annotations.Indexed;
 import org.mongodb.morphia.annotations.Reference;
 
 /**
@@ -14,14 +16,27 @@ import org.mongodb.morphia.annotations.Reference;
  * @author
  */
 @Entity(noClassnameStored = true, value = "camion")
-public class Camion extends BaseEntity{
-    
+public class Camion extends BaseEntity {
+
+    @Indexed(options = @IndexOptions(name = "camion_codigoUIdx", unique = true))
+    private Integer codigo;
     @Reference
     private Conductor conductor;
     private String placa;
     private String modelo;
     private String color;
     private String marca;
+
+    public Camion() {
+    }
+
+    public Integer getCodigo() {
+        return codigo;
+    }
+
+    public void setCodigo(Integer codigo) {
+        this.codigo = codigo;
+    }
 
     public Conductor getConductor() {
         return conductor;
@@ -88,5 +103,4 @@ public class Camion extends BaseEntity{
         return true;
     }
 
-    
 }
