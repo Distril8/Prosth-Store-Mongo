@@ -9,6 +9,8 @@ package ec.edu.espe.distribuidas.prosth.mongo.model;
 
 import ec.edu.espe.distribuidas.nosql.mongo.BaseEntity;
 import org.mongodb.morphia.annotations.Entity;
+import org.mongodb.morphia.annotations.IndexOptions;
+import org.mongodb.morphia.annotations.Indexed;
 
 
 
@@ -20,13 +22,25 @@ import org.mongodb.morphia.annotations.Entity;
 public class Proveedor extends BaseEntity {
 
 
-    
+    @Indexed(options = @IndexOptions(name = "proveedor_codigoUIdx", unique = true))
+    private Integer codigo;
     private String nombre;
     private String descripcion;
 
     public Proveedor() {
     }
 
+    public Integer getCodigo() {
+        return codigo;
+    }
+
+    public void setCodigo(Integer codigo) {
+        this.codigo = codigo;
+    }
+
+    
+    
+    
     public String getNombre() {
         return nombre;
     }

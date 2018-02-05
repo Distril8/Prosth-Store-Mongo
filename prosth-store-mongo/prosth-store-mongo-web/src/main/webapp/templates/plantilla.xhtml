@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"   
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui"
+      >
+    <h:head>
+        <title>Prosht Store</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <link rel="stylesheet" href="#{facesContext.externalContext.requestContextPath}/images/reset.css" type="text/css" media="all"/>
+        <link rel="stylesheet" href="#{facesContext.externalContext.requestContextPath}/images/layout.css" type="text/css" media="all"/>
+        <link rel="stylesheet" href="#{facesContext.externalContext.requestContextPath}/images/style.css" type="text/css" media="all"/>
+    </h:head>
+    <h:body id="page2">
+        <div class="body1">
+            <div class="body2">
+                <div class="main">
+                    <!-- header -->
+                    <header>
+                        <div class="wrapper">
+                            <h1><a href="index.xhtml" id="logo">First</a></h1>
+                            <div class="right">
+                                <nav>
+                                    <ul id="top_nav">
+                                        <li> <p:link outcome="index" value="Salir">
+                                            </p:link></li>
+                                        <li> <p:link outcome="index" value="Ingresar">
+                                            </p:link></li>
+                                    </ul>
+                                    <form id="search" method="post">
+                                        <div>
+                                            <input type="submit" class="submit" value=""/>
+                                            <input type="text" class="input"/>
+                                        </div>
+                                    </form>
+                                </nav>
+                            </div>
+                        </div>
+                        <h:form>
+                            <p:menubar>
+                                <p:submenu label="Catalogos" icon="ui-icon-document">
+                                    <p:menuitem value="Tipo Usuario" action="tipoUsuario" />
+                                    <p:menuitem value="Conductor" action="conductor" />
+                                    <p:menuitem value="Proveedor" action="proveedor" />
+                                    <p:menuitem value="Categoria" action="categoria" />
+                                    <p:menuitem value="Camion" action="camion" />
+                                </p:submenu>
+                                <p:submenu label="Compra y Venta" icon="ui-icon-cart" >
+                                    <p:menuitem value="Compra"  />
+                                    <p:menuitem value="Venta"  />
+                                    
+                                </p:submenu>
+                              <p:menuitem value="Productos" action="producto" icon="ui-icon-clipboard"/>
+                              <p:menuitem value="Entregas" action="entrega" icon="ui-icon-check"/>
+                            </p:menubar>
+                           
+                     
+                             </h:form>
+                    </header>
+                </div>
+            </div>
+        </div>
+        <!-- / header -->
+        <!-- content -->
+        <div class="body5">
+            <div class="body6">
+                <div class="main">
+                    <div class="wrapper">
+                        <figure class="left"><img src="images/letter3.png" alt=""/></figure>
+                        <h2>Prosht Store <span>Our Company</span></h2>
+                        ..El presente sistema cubre la atención en línea, monitoreo de la entrega a domicilio y venta  de prótesis de rodilla
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="body7">
+            <div class="main">
+                <section id="content">
+                    <h:form>
+                    <p:spacer height="10px"/>
+                    <ui:insert name="contenido">
+
+                    </ui:insert>
+                    </h:form>
+                </section>
+            </div>
+        </div>
+        <!-- / content -->
+        <!-- footer -->
+        <div class="body8">
+            <div class="body9">
+                <div class="main">
+                    <footer>
+                        <div class="col_1">
+                            <h3></h3>
+                        </div>
+                        <div class="col_2 pad_left1">
+                            <h3><center>Social Networks</center></h3>
+                            <div class="wrapper">
+                                <center><a href="#"><img src="images/instagram-social-network-logo-of-photo-camera.png" alt="Twitter"/></a>
+                                    <a href="#"><img src="images/facebook-logo-button.png" alt="Twitter"/></a>
+                                    <a href="#"><img src="images/twitter-logo.png" alt="Twitter"/></a>
+                                    <a href="#"><img src="images/github-logo.png" alt="Twitter"/></a>
+                                    <p><center>Proyecto de Aplicaciones Distribuidas</center>
+                                        <center>Tutor: Ing. Henry Coral</center>
+                                        <center>David Chavez - Sebastian Cajape</center>
+                                        <center>Ingenieria en Sistemas e Informatica</center></p>
+                                </center>
+
+                            </div>
+                        </div>
+                    </footer>
+                </div>
+                <!-- / footer -->
+            </div>
+        </div>
+    </h:body>
+</html>
+
