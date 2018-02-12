@@ -40,6 +40,8 @@ public class CamionService {
     }
 
     public void modificar(Camion camion) {
+        Camion aux = this.camionDao.findOne("codigo", camion.getCodigo());
+        camion.setId(aux.getId());
         this.camionDao.save(camion);
     }
     

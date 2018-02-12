@@ -38,8 +38,10 @@ public class ConductorService {
         return this.conductorDao.findOne("codigo", codigo);
     }
 
-    public void crear(Conductor proveedor) {
-        this.conductorDao.save(proveedor);
+    public void crear(Conductor conductor) {
+        Conductor aux = this.conductorDao.findOne("codigo", conductor.getCodigo());
+        conductor.setId(aux.getId());
+        this.conductorDao.save(conductor);
     }
 
     public void modificar(Conductor proveedor) {

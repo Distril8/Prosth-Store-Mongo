@@ -43,6 +43,8 @@ public class ProveedorService {
     }
 
     public void modificar(Proveedor proveedor) {
+        Proveedor aux = this.proveedorDao.findOne("codigo", proveedor.getCodigo());
+        proveedor.setId(aux.getId());
         this.proveedorDao.save(proveedor);
     }
 

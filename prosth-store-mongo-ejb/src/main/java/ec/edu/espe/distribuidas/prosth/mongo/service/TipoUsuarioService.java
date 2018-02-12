@@ -44,6 +44,8 @@ public class TipoUsuarioService {
     }
 
     public void modificar(TipoUsuario tipoUsuario) {
+        TipoUsuario aux = this.tipoUsuarioDao.findOne("codigo", tipoUsuario.getCodigo());
+        tipoUsuario.setId(aux.getId());
         this.tipoUsuarioDao.save(tipoUsuario);
     }
 

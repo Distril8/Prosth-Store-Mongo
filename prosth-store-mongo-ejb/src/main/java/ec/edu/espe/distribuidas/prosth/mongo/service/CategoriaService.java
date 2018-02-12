@@ -44,6 +44,8 @@ public class CategoriaService {
     }
 
     public void modificar(Categoria categoria) {
+        Categoria aux = this.categoriaDao.findOne("codigo", categoria.getCodigo());
+        categoria.setId(aux.getId());
         this.categoriaDao.save(categoria);
     }
 
