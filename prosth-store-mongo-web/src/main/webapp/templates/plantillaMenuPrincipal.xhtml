@@ -54,14 +54,14 @@ and open the template in the editor.
                                 <p:submenu label="Compra y Venta" icon="ui-icon-cart" >
                                     <p:menuitem value="Compra"  />
                                     <p:menuitem value="Venta"  />
-                                    
+
                                 </p:submenu>
-                              <p:menuitem value="Productos" action="producto" icon="ui-icon-clipboard"/>
-                              <p:menuitem value="Entregas" action="entrega" icon="ui-icon-check"/>
+                                <p:menuitem value="Productos" action="producto" icon="ui-icon-clipboard"/>
+                                <p:menuitem value="Entregas" action="entrega" icon="ui-icon-check"/>
                             </p:menubar>
-                           
-                     
-                             </h:form>
+
+
+                        </h:form>
                     </header>
                 </div>
             </div>
@@ -82,15 +82,77 @@ and open the template in the editor.
         <div class="body7">
             <div class="main">
                 <section id="content">
-                    <h:form>
-                    <p:spacer height="10px"/>
-                    <ui:insert name="contenido">
+                    <div class="wrapper">
+                        <article class="col2">
+                            <div class="pad1">
+                                <h2>Nuestros Servicios</h2>
+                            </div>	
+                            <div class="box2">
+                                <div class="box2_top">	
+                                    <div class="box2_bot">	
+                                        <div class="pad">
+                                            <div class="wrapper">
+                                                <figure class="left"><img src="#{facesContext.externalContext.requestContextPath}/images/marker_1.gif" alt=""/></figure>
+                                                <div class="cols">
+                                                    <a href="#">Nemo enim ipsam voluptatem quia voluptas sit aspernatur</a>
+                                                    Sed quia consequuntur magni dolores eosqui ratione voluptatem sequi nes ciunt. Neque porro quisiquam est, qui dolorem ipsum quia doloirs consectetur adipisci velit, sed quia non numquam eius.
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="box2">
+                                <div class="box2_top">
+                                    <div class="box2_bot">	
+                                        <div class="pad">
+                                            <div class="wrapper">
+                                                <figure class="left"><img src="#{facesContext.externalContext.requestContextPath}/images/marker_1.gif" alt=""/></figure>
+                                                <div class="cols">
+                                                    <a href="#">Quis autem vel eum iure reprehenderit qui</a>
+                                                    Darum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id maxime placeat facere possimus, omnis voluptas assumenda est.
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="box2">
+                                <div class="box2_top">	
+                                    <div class="box2_bot">	
+                                        <div class="pad">
+                                            <div class="wrapper">
+                                                <figure class="left"><img src="#{facesContext.externalContext.requestContextPath}/images/marker_1.gif" alt=""/></figure>
+                                                <div class="cols">
+                                                    <a href="#">Lorem ipsum dolor sit amet, consectetur adipisicing</a>
+                                                    Keque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consecte- tur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut<br>labore et dolore magnam.</br>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+                        <article class="col1 pad_left1">
+                            <h2>Nuestras Marcas</h2>
+                            <ul class="list2">
+                                <li><a href="#"><img src="" alt=""/>Starting up</a></li>
+                                <li><a href="#"><img src="" alt=""/>Finance and grants</a></li>
+                                <li><a href="#"><img src="" alt=""/>Taxes, returns &amp; payroll</a></li>
+                                <li><a href="#"><img src="" alt=""/>Employment &amp; skills</a></li>
+                                <li class="bg_none"><a href="#"><img src="" alt=""/>Health, safety, premises</a></li>
+                            </ul>
+                        </article>
+                        <h:form>
+                            <p:spacer height="10px"/>
+                            <ui:insert name="contenido">
 
-                    </ui:insert>
-                    </h:form>
+                            </ui:insert>
+                        </h:form>
+                         </div>
                 </section>
             </div>
-        </div>
+                     </div>
         <!-- / content -->
         <!-- footer -->
         <div class="body8">
