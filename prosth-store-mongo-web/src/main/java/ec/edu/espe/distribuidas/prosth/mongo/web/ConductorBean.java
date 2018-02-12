@@ -96,7 +96,7 @@ public class ConductorBean extends BaseBean implements Serializable {
                 FacesUtil.addMessageInfo("Se agregó el Conductor: " + this.conductor.getNombre() + this.conductor.getApellido());
             } else {
                 this.conductorService.modificar(this.conductor);
-                FacesUtil.addMessageInfo("Se modific\u00f3 el Conductor con c\u00f3digo: " + this.conductor.getCodigo());
+                FacesUtil.addMessageInfo("Se modific\u00f3 el Conductor: " + this.conductor.getNombre());
             }
         } catch (Exception ex) {
             FacesUtil.addMessageError(null, "Ocurrí\u00f3 un error al actualizar la informaci\u00f3n");

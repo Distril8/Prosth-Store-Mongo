@@ -39,13 +39,14 @@ public class ConductorService {
     }
 
     public void crear(Conductor conductor) {
-        Conductor aux = this.conductorDao.findOne("codigo", conductor.getCodigo());
-        conductor.setId(aux.getId());
+        
         this.conductorDao.save(conductor);
     }
 
-    public void modificar(Conductor proveedor) {
-        this.conductorDao.save(proveedor);
+    public void modificar(Conductor conductor) {
+        Conductor aux = this.conductorDao.findOne("codigo", conductor.getCodigo());
+        conductor.setId(aux.getId());
+        this.conductorDao.save(conductor);
     }
 
     public void eliminar(Integer codigo) {

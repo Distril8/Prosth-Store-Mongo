@@ -8,10 +8,11 @@
 package ec.edu.espe.distribuidas.prosth.mongo.model;
 
 import ec.edu.espe.distribuidas.nosql.mongo.BaseEntity;
-import java.io.Serializable;
 import java.math.BigDecimal;
 import java.util.Date;
 import org.mongodb.morphia.annotations.Entity;
+import org.mongodb.morphia.annotations.IndexOptions;
+import org.mongodb.morphia.annotations.Indexed;
 import org.mongodb.morphia.annotations.Reference;
 
 
@@ -22,6 +23,8 @@ import org.mongodb.morphia.annotations.Reference;
 @Entity(noClassnameStored = true, value = "compra")
 public class Compra extends BaseEntity {
 
+    @Indexed(options = @IndexOptions(name = "conductor_codigoUIdx", unique = true))
+    private Integer codigo;
     @Reference
     private Proveedor proveedor;
     private Date fecha;
@@ -31,8 +34,20 @@ public class Compra extends BaseEntity {
     public Compra() {
     }
 
+    public Compra(Integer codigo) {
+        this.codigo = codigo;
+    }
+
     public Proveedor getProveedor() {
         return proveedor;
+    }
+
+    public Integer getCodigo() {
+        return codigo;
+    }
+
+    public void setCodigo(Integer codigo) {
+        this.codigo = codigo;
     }
 
     public void setProveedor(Proveedor proveedor) {
@@ -55,7 +70,7 @@ public class Compra extends BaseEntity {
         this.valorTotal = valorTotal;
     }
 
-  @Override
+ @Override
     public int hashCode() {
         int hash = 0;
         hash += (super.id != null ? super.id.hashCode() : 0);
@@ -77,8 +92,7 @@ public class Compra extends BaseEntity {
 
     @Override
     public String toString() {
-        return "Compra{" + "proveedor=" + proveedor + ", fecha=" + fecha + ", valorTotal=" + valorTotal + '}';
+        return "ec.edu.espe.distribuidas.prosth.mongo.model.Compra[ id=" + super.id.toHexString() + " ]";
     }
-
     
 }

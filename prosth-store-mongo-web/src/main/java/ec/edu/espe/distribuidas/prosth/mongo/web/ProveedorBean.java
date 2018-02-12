@@ -66,7 +66,7 @@ public class ProveedorBean extends BaseBean implements Serializable {
     public void eliminar() {
         try {
             this.proveedorService.eliminar(this.proveedorSel.getCodigo());
-            this.proveedor = (Proveedor) this.proveedorService.obtenerTodos();
+            this.proveedores = this.proveedorService.obtenerTodos();
             FacesUtil.addMessageInfo("Se elimino el registro ");
             this.proveedorSel = null;
         } catch (Exception e) {
@@ -92,7 +92,7 @@ public class ProveedorBean extends BaseBean implements Serializable {
                 FacesUtil.addMessageInfo("Se agregó el Proveedor: " + this.proveedor.getNombre());
             } else {
                 this.proveedorService.modificar(this.proveedor);
-                FacesUtil.addMessageInfo("Se modific\u00f3 el Proveedor con c\u00f3digo: " + this.proveedor.getId());
+                FacesUtil.addMessageInfo("Se modific\u00f3 el Proveedor: " + this.proveedor.getNombre());
             }
         } catch (Exception ex) {
             FacesUtil.addMessageError(null, "Ocurrí\u00f3 un error al actualizar la informaci\u00f3n");
