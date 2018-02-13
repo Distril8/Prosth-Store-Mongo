@@ -26,6 +26,7 @@ public class Camion extends BaseEntity {
     private String modelo;
     private String color;
     private String marca;
+    private String nombreConductor;
 
     public Camion() {
     }
@@ -78,29 +79,38 @@ public class Camion extends BaseEntity {
         this.marca = marca;
     }
 
-    @Override
-    public String toString() {
-        return "Camion{" + "conductor=" + conductor + ", placa=" + placa + ", modelo=" + modelo + ", color=" + color + ", marca=" + marca + '}';
+    public String getNombreConductor() {
+        return nombreConductor;
     }
 
-    @Override
+    public void setNombreConductor(String nombreConductor) {
+        this.nombreConductor = nombreConductor;
+    }
+
+   
+       @Override
     public int hashCode() {
         int hash = 0;
-        hash += (super.id != null ? super.id.hashCode() : 0);
+        hash += (codigo != null ? codigo.hashCode() : 0);
         return hash;
     }
 
     @Override
     public boolean equals(Object object) {
-        // TODO: Warning - this method won't work in the case the id fields are not set
         if (!(object instanceof Camion)) {
             return false;
         }
         Camion other = (Camion) object;
-        if ((super.id == null && other.id != null) || (super.id != null && !super.id.equals(super.id))) {
+        if ((this.codigo == null && other.codigo != null) || (this.codigo != null && !this.codigo.equals(other.codigo))) {
             return false;
         }
         return true;
     }
+
+    @Override
+    public String toString() {
+        return "ec.edu.espe.proyecto.protesis.model.Producto[ codProducto=" + codigo + " ]";
+    }
+    
 
 }

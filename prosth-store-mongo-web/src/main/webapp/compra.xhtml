@@ -112,7 +112,7 @@
                                     <h:outputText value="Categoria: " />
 
                                     <p:selectOneMenu id="filtroCmb" disabled="#{productoBean.enModificar}" >
-                                        <f:selectItems var="categoria" value="#{productoBean.categorias}" itemLabel="#{categoria.nombre}" itemValue="#{categoria.codigo}"  />
+                                        <f:selectItems var="categoria" value="#{productoBean.categorias}" itemLabel="#{categoria.nombre}" itemValue="#{productoBean.producto.nombreCategoria}"  />
                                     </p:selectOneMenu>
                                     <h:outputText value="Marca: " />
                                     <p:inputText value="#{productoBean.producto.marca}" disabled="#{productoBean.enModificar}" />

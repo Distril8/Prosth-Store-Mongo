@@ -30,6 +30,10 @@ public class Conductor extends BaseEntity {
     public Conductor() {
     }
 
+    public Conductor(Integer codigo) {
+        this.codigo = codigo;
+    }
+
     public Integer getCodigo() {
         return codigo;
     }
@@ -78,21 +82,20 @@ public class Conductor extends BaseEntity {
         this.licencia = licencia;
     }
 
-    @Override
+      @Override
     public int hashCode() {
         int hash = 0;
-        hash += (super.id != null ? super.id.hashCode() : 0);
+        hash += (codigo != null ? codigo.hashCode() : 0);
         return hash;
     }
 
     @Override
     public boolean equals(Object object) {
-        // TODO: Warning - this method won't work in the case the id fields are not set
         if (!(object instanceof Conductor)) {
             return false;
         }
         Conductor other = (Conductor) object;
-        if ((super.id == null && other.id != null) || (super.id != null && !super.id.equals(super.id))) {
+        if ((this.codigo == null && other.codigo != null) || (this.codigo != null && !this.codigo.equals(other.codigo))) {
             return false;
         }
         return true;
@@ -100,7 +103,8 @@ public class Conductor extends BaseEntity {
 
     @Override
     public String toString() {
-        return "ec.edu.espe.distribuidas.prosth.mongo.model.Conductor[ id=" + super.id.toHexString() + " ]";
+        return "ec.edu.espe.proyecto.protesis.model.Conductor[ cod=" + codigo + " ]";
     }
+    
 
 }

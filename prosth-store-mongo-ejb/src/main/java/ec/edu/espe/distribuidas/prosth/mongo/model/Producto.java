@@ -33,6 +33,7 @@ public class Producto extends BaseEntity {
     private String marca;
     private Integer cantidad;
     private String imagen;
+    private String nombreCategoria;
    
 
     public Producto() {
@@ -124,6 +125,14 @@ public class Producto extends BaseEntity {
 
     public void setCategoria(Categoria categoria) {
         this.categoria = categoria;
+    }
+
+    public String getNombreCategoria() {
+        return nombreCategoria;
+    }
+
+    public void setNombreCategoria(String nombreCategoria) {
+        this.nombreCategoria = nombreCategoria;
     }
 
 

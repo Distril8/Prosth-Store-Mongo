@@ -20,8 +20,8 @@
                              selectionMode="single" selection="#{productoBean.productoSel}" rowKey="#{producto.codigo}">
                     <p:ajax event="rowSelect" update="@form" />
                     <p:ajax event="rowUnselect" update="@form" />
-                    <p:column headerText="Tipo" sortBy="#{producto.categoria.nombre}">
-                        <h:outputText value="#{producto.categoria.nombre}" />
+                    <p:column headerText="Tipo" sortBy="#{producto.nombreCategoria}">
+                        <h:outputText value="#{producto.nombreCategoria}" />
                     </p:column>
                     <p:column headerText="Nombre" sortBy="#{producto.nombre}">
                         <h:outputText value="#{producto.nombre}" >
@@ -61,8 +61,8 @@
                         <p:outputLabel for="nombre" value="Nombre" />
                         <p:inputText id="nombre" value="#{productoBean.producto.nombre}"  />
                         <h:outputText value="Categoria: " />
-                        <h:selectOneMenu  >
-                            <f:selectItems id="tipo" value="#{productoBean.categorias}" var="categoria" itemValue="#{productoBean.producto.categoria.id}" itemLabel="#{categoria.nombre}"/>                          
+                        <h:selectOneMenu  value="#{productoBean.producto.nombreCategoria}">
+                            <f:selectItems id="tipo" value="#{productoBean.categorias}" var="categoria" itemValue="#{productoBean.producto.nombreCategoria}" itemLabel="#{categoria.nombre}"/>                          
                         </h:selectOneMenu>
                         
                         <p:outputLabel for="descripcion" value="Marca" />

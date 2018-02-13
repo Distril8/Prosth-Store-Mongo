@@ -44,6 +44,7 @@ public class CamionBean extends BaseBean implements Serializable {
     public void init() {
         this.camiones = this.camionService.obtenerTodos();
         this.camion = new Camion();
+        this.conductores = this.conductorService.obtenerTodos();
     }
     @Override
     public void agregar() {
@@ -63,7 +64,7 @@ public class CamionBean extends BaseBean implements Serializable {
         this.camion.setModelo(this.camionSel.getModelo());
         this.camion.setColor(this.camionSel.getColor());
         this.camion.setMarca(this.camionSel.getMarca());
-        
+        this.camion.setNombreConductor(this.camionSel.getNombreConductor());
     }
     
     public void eliminar() {
@@ -95,7 +96,7 @@ public class CamionBean extends BaseBean implements Serializable {
                 FacesUtil.addMessageInfo("Se agregó el Camion: " + this.camion.getPlaca());
             } else {
                 this.camionService.modificar(this.camion);
-                FacesUtil.addMessageInfo("Se modific\u00f3 el Camion con c\u00f3digo: " + this.camion.getPlaca());
+                FacesUtil.addMessageInfo("Se modific\u00f3 el Camion: " + this.camion.getPlaca());
             }
         } catch (Exception ex) {
             FacesUtil.addMessageError(null, "Ocurrí\u00f3 un error al actualizar la informaci\u00f3n");
@@ -103,6 +104,11 @@ public class CamionBean extends BaseBean implements Serializable {
         super.reset();
         this.camion = new Camion();
         this.camiones = this.camionService.obtenerTodos();
+    }
+    
+    public void guardarConductor(){
+        
+        this.camion.setNombreConductor(this.camion.getNombreConductor());
     }
 
     public List<Conductor> getConductores() {

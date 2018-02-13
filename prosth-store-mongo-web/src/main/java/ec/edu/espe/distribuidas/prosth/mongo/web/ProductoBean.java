@@ -70,6 +70,7 @@ public class ProductoBean extends BaseBean implements Serializable {
         this.producto.setDescripcion(this.productoSel.getDescripcion());
         this.producto.setCantidad(this.productoSel.getCantidad());
         this.producto.setImagen(this.productoSel.getImagen());
+        this.producto.setNombreCategoria(this.productoSel.getNombreCategoria());
     }
     
     public void buscar() {
