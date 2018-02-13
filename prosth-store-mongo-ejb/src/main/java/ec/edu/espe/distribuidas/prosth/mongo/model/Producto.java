@@ -31,6 +31,7 @@ public class Producto extends BaseEntity {
     private BigDecimal precioVenta;
     private int stock;
     private String marca;
+    private Integer cantidad;
     private String imagen;
    
 
@@ -39,6 +40,14 @@ public class Producto extends BaseEntity {
 
     public Producto(Integer codigo) {
         this.codigo = codigo;
+    }
+
+    public Integer getCantidad() {
+        return cantidad;
+    }
+
+    public void setCantidad(Integer cantidad) {
+        this.cantidad = cantidad;
     }
 
     public BigDecimal getPrecioVenta() {

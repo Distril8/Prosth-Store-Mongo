@@ -2,6 +2,7 @@ C:\Users\js_cm\OneDrive\Documentos\NetBeansProjects\Proyecto-segundo\last\Prosth
 C:\Users\js_cm\OneDrive\Documentos\NetBeansProjects\Proyecto-segundo\last\Prosth-Store-Mongo\prosth-store-mongo-ejb\src\main\java\ec\edu\espe\distribuidas\prosth\mongo\dao\ProveedorDAO.java
 C:\Users\js_cm\OneDrive\Documentos\NetBeansProjects\Proyecto-segundo\last\Prosth-Store-Mongo\prosth-store-mongo-ejb\src\main\java\ec\edu\espe\distribuidas\prosth\mongo\dao\TipoUsuarioDAO.java
 C:\Users\js_cm\OneDrive\Documentos\NetBeansProjects\Proyecto-segundo\last\Prosth-Store-Mongo\prosth-store-mongo-ejb\src\main\java\ec\edu\espe\distribuidas\prosth\mongo\NewSessionBean.java
+C:\Users\js_cm\OneDrive\Documentos\NetBeansProjects\Proyecto-segundo\last\Prosth-Store-Mongo\prosth-store-mongo-ejb\src\main\java\ec\edu\espe\distribuidas\prosth\mongo\dao\DetalleDAO.java
 C:\Users\js_cm\OneDrive\Documentos\NetBeansProjects\Proyecto-segundo\last\Prosth-Store-Mongo\prosth-store-mongo-ejb\src\main\java\ec\edu\espe\distribuidas\prosth\mongo\service\CompraService.java
 C:\Users\js_cm\OneDrive\Documentos\NetBeansProjects\Proyecto-segundo\last\Prosth-Store-Mongo\prosth-store-mongo-ejb\src\main\java\ec\edu\espe\distribuidas\prosth\mongo\dao\CamionDAO.java
 C:\Users\js_cm\OneDrive\Documentos\NetBeansProjects\Proyecto-segundo\last\Prosth-Store-Mongo\prosth-store-mongo-ejb\src\main\java\ec\edu\espe\distribuidas\prosth\mongo\service\ProductoService.java
@@ -20,10 +21,12 @@ C:\Users\js_cm\OneDrive\Documentos\NetBeansProjects\Proyecto-segundo\last\Prosth
 C:\Users\js_cm\OneDrive\Documentos\NetBeansProjects\Proyecto-segundo\last\Prosth-Store-Mongo\prosth-store-mongo-ejb\src\main\java\ec\edu\espe\distribuidas\prosth\mongo\dao\CompraDAO.java
 C:\Users\js_cm\OneDrive\Documentos\NetBeansProjects\Proyecto-segundo\last\Prosth-Store-Mongo\prosth-store-mongo-ejb\src\main\java\ec\edu\espe\distribuidas\prosth\mongo\model\Camion.java
 C:\Users\js_cm\OneDrive\Documentos\NetBeansProjects\Proyecto-segundo\last\Prosth-Store-Mongo\prosth-store-mongo-ejb\src\main\java\ec\edu\espe\distribuidas\prosth\mongo\service\CamionService.java
+C:\Users\js_cm\OneDrive\Documentos\NetBeansProjects\Proyecto-segundo\last\Prosth-Store-Mongo\prosth-store-mongo-ejb\src\main\java\ec\edu\espe\distribuidas\prosth\mongo\service\DetalleService.java
 C:\Users\js_cm\OneDrive\Documentos\NetBeansProjects\Proyecto-segundo\last\Prosth-Store-Mongo\prosth-store-mongo-ejb\src\main\java\ec\edu\espe\distribuidas\prosth\mongo\dao\ProductoDAO.java
 C:\Users\js_cm\OneDrive\Documentos\NetBeansProjects\Proyecto-segundo\last\Prosth-Store-Mongo\prosth-store-mongo-ejb\src\main\java\ec\edu\espe\distribuidas\prosth\mongo\model\DetalleCompra.java
 C:\Users\js_cm\OneDrive\Documentos\NetBeansProjects\Proyecto-segundo\last\Prosth-Store-Mongo\prosth-store-mongo-ejb\src\main\java\ec\edu\espe\distribuidas\prosth\mongo\service\ProveedorService.java
 C:\Users\js_cm\OneDrive\Documentos\NetBeansProjects\Proyecto-segundo\last\Prosth-Store-Mongo\prosth-store-mongo-ejb\src\main\java\ec\edu\espe\distribuidas\prosth\mongo\dao\ConductorDAO.java
 C:\Users\js_cm\OneDrive\Documentos\NetBeansProjects\Proyecto-segundo\last\Prosth-Store-Mongo\prosth-store-mongo-ejb\src\main\java\ec\edu\espe\distribuidas\prosth\mongo\model\Categoria.java
 C:\Users\js_cm\OneDrive\Documentos\NetBeansProjects\Proyecto-segundo\last\Prosth-Store-Mongo\prosth-store-mongo-ejb\src\main\java\ec\edu\espe\distribuidas\nosql\mongo\config\ConfigReader.java
+C:\Users\js_cm\OneDrive\Documentos\NetBeansProjects\Proyecto-segundo\last\Prosth-Store-Mongo\prosth-store-mongo-ejb\src\main\java\ec\edu\espe\distribuidas\prosth\mongo\model\Detalle.java
 C:\Users\js_cm\OneDrive\Documentos\NetBeansProjects\Proyecto-segundo\last\Prosth-Store-Mongo\prosth-store-mongo-ejb\src\main\java\ec\edu\espe\distribuidas\prosth\mongo\model\Proveedor.java

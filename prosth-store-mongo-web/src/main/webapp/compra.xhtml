@@ -7,78 +7,127 @@
       xmlns:p="http://primefaces.org/ui"
       xmlns:ui="http://java.sun.com/jsf/facelets">
     <ui:composition template="/templates/plantilla.xhtml">
+
         <ui:define name="contenido">
             <p:panel id="mainPnl" header="Compra" style="width: 80%; margin: auto;">
-     <p:growl id="growl" sticky="true" showDetail="true"/>
-    <p:wizard >
-        <p:tab id="personal" title="Proveedores">
-            <p:panel header="Seleccione un proveedor">
-                <p:messages />
-                 <p:dataTable var="proveedor" value="#{proveedorBean.proveedores}" 
-                             selectionMode="single" selection="#{proveedorBean.proveedorSel}" rowKey="#{proveedor.codigo}">
-                    <p:ajax event="rowSelect" update="@form" />
-                    <p:ajax event="rowUnselect" update="@form" />
-                    <p:column headerText="Codigo">
-                        <h:outputText value="#{proveedor.codigo}" />
-                    </p:column>
-                    <p:column headerText="Nombre">
-                        <h:outputText value="#{proveedor.nombre}" />
-                    </p:column>
-                    <p:column headerText="Descripcion">
-                        <h:outputText value="#{proveedor.descripcion}" />
-                    </p:column>
-                </p:dataTable>
-            </p:panel>
-        </p:tab>
-        <p:tab id="address" title="Productos">
-            <p:panel header="Agregue los productos"  >
-                <p:messages />
-                <h:form>
-                <h:panelGrid  columns="2" columnClasses="label, value" >
-                 
-                    <h:outputText value="Codigo: " />
-                    <p:inputText  value="#{productoBean.producto.codigo}" />
- 
-                    <h:outputText value="Nombre: " />
-                    <p:inputText value="#{productoBean.producto.nombre}" />
- 
-                    <h:outputText value="Marca: " />
-                    <p:inputText value="#{productoBean.producto.marca}" />
- 
-                    <h:outputText value="Descripcion: " />
-                     <p:inputText value="#{productoBean.producto.descripcion}" />
-                    
-                    <h:outputText value="Precio: " />
-                     <p:inputText value="#{productoBean.producto.precio}" />
-                    
-                    <h:outputText value="Precio de Venta: " />
-                    <p:inputText value="#{productoBean.producto.precioVenta}" />
-                    
-                    <h:outputText value="Cantidad: " />
-                    <p:spinner  value="#{productoBean.producto.stock}" min="0" />
-                </h:panelGrid>   
-                </h:form>
-                    
-                
-                 <p:commandButton value="Nuevo Producto"  update="@form"/>
-            </p:panel>
-        </p:tab>
- 
-        
-        <p:tab id="confirm" title="Confirmacion de Compra">
-            <p:panel header="Compra">
-                <p:dataTable var="proveedor" value="#{proveedorBean.proveedorSel}" 
-                             >
-                    <p:column headerText="Nombre">
-                        <h:outputText value="#{proveedor.nombre}"  />
-                    </p:column>
-                </p:dataTable>
-                        <h:outputText />
-                        <h:outputText />
-                <p:commandButton value="Confirmar" actionListener="#{compraBean.guardar}" update="growl" />
-            </p:panel>
-        </p:tab>
-    </p:wizard>
+                <p:growl id="growl" sticky="true" showDetail="true"/>
+                <p:wizard >
+                    <p:tab id="personal" title="Proveedores">
+                        <p:panel header="Seleccione un proveedor">
+                            <p:messages />
+                            <p:dataTable var="proveedor" value="#{proveedorBean.proveedores}" 
+                                         selectionMode="single" selection="#{proveedorBean.proveedorSel}" rowKey="#{proveedor.codigo}">
+                                <p:ajax event="rowSelect" update="@form" />
+                                <p:ajax event="rowUnselect" update="@form" />
+                                <p:column headerText="Codigo">
+                                    <h:outputText value="#{proveedor.codigo}" />
+                                </p:column>
+                                <p:column headerText="Nombre">
+                                    <h:outputText value="#{proveedor.nombre}" />
+                                </p:column>
+                                <p:column headerText="Descripcion">
+                                    <h:outputText value="#{proveedor.descripcion}" />
+                                </p:column>
+                            </p:dataTable>
+                        </p:panel>
+                    </p:tab>
+                    <p:tab id="address" title="Productos">
+                        <p:panel header="Agregue los productos" >
+                            <p:messages />
+                            <p:dataTable var="producto" value="#{productoBean.productos}" 
+                                         selectionMode="multiple" selection="#{productoBean.productosSel}" rowKey="#{producto.codigo}">
+                                
+
+                                <p:column headerText="Codigo">
+                                    <h:outputText value="#{producto.codigo}" />
+                                </p:column>
+
+                                <p:column headerText="Nombre">
+                                    <h:outputText value="#{producto.nombre}" />
+                                </p:column>
+                                <p:column headerText="Marca">
+                                    <h:outputText value="#{producto.marca}" />
+                                </p:column>
+                                <p:column headerText="Precio">
+                                    <h:outputText value="#{producto.precio}" />
+                                </p:column>
+                                <p:column headerText="Precio de Venta">
+                                    <h:outputText value="#{producto.precioVenta}" />
+                                </p:column>
+                                <p:column headerText="Cantidad">
+                                    <h:outputText value="#{producto.cantidad}" />
+                                </p:column>
+
+                            </p:dataTable>
+                            <p:messages id="messages" showDetail="true" autoUpdate="true" closable="true" />
+                            <p:commandButton value="Nuevo Producto" actionListener="#{productoBean.agregar()}" update="@form"/>
+                           
+                            <p:commandButton id="modBtn" value="Modificar" actionListener="#{productoBean.modificar()}" update="@form" disabled="#{productoBean.productoSel eq null}"/>
+                            <p:panel header="#{productoBean.titulo} Producto" visible="#{productoBean.habilitaForm}">
+                                <p:panelGrid columns="2">
+                                    <h:outputText value="Codigo: " />
+                                    <p:inputText  value="#{productoBean.producto.codigo}" />
+                                    <h:outputText value="Nombre: " />
+                                    <p:inputText value="#{productoBean.producto.nombre}" /> 
+                                    <h:outputText value="Categoria: " />
+                                    <p:selectOneMenu id="filtroCmb" >
+                                        <f:selectItems var="categoria" value="#{productoBean.categorias}" itemLabel="#{categoria.nombre}" itemValue="#{categoria.codigo}"  />
+                                    </p:selectOneMenu>
+                                    <h:outputText value="Marca: " />
+                                    <p:inputText value="#{productoBean.producto.marca}" />
+                                    <h:outputText value="Descripcion: " />
+                                    <p:inputText value="#{productoBean.producto.descripcion}" />
+                                    <h:outputText value="Precio: " />
+                                    <p:inputText value="#{productoBean.producto.precio}" />
+                                    <h:outputText value="Precio de Venta: " />
+                                    <p:inputText value="#{productoBean.producto.precioVenta}" />
+                                    <h:outputText value="Cantidad: " />
+                                    <p:spinner  value="#{productoBean.producto.cantidad}" min="0" />
+                                </p:panelGrid>
+                                <p:commandButton value="Aceptar" actionListener="#{productoBean.guardar}" update="@form" />
+                                <p:commandButton value="Cancelar" actionListener="#{productoBean.cancelar}" update="@form" />
+                            </p:panel>
+                        </p:panel>
+                        <p:confirmDialog global="true" showEffect="fade" hideEffect="fade">
+                            <p:commandButton value="Si" type="button" styleClass="ui-confirmdialog-yes" icon="ui-icon-check" />
+                            <p:commandButton value="No" type="button" styleClass="ui-confirmdialog-no" icon="ui-icon-close" />
+                        </p:confirmDialog>
+                    </p:tab>
+                    <p:tab id="confirm" title="Confirmacion de Compra">
+                        <p:panel header="Compra">
+                            <p:dataTable var="proveedor" value="#{proveedorBean.proveedorSel}" 
+                                         >
+                                <p:column headerText="Nombre del Proveedor">
+                                    <h:outputText value="#{proveedor.nombre}"  />
+                                </p:column>
+                                <p:column headerText="Fecha">
+                                    <h:outputText value="#{compraBean.fecha()}"  />
+                                </p:column>
+                            </p:dataTable>
+                            <p:dataTable var="producto" value="#{productoBean.productosSel}" 
+                                         >
+                                <p:column headerText="Nombre del Producto">
+                                    <h:outputText value="#{producto.nombre}"  />
+                                </p:column>
+                                <p:column headerText="Valor Unitario">
+                                    <h:outputText value="#{producto.precio}"  />
+                                </p:column>
+                                <p:column headerText="Valor Total">
+                                    <h:outputText value="#{producto.precio*producto.cantidad}"  />
+                                </p:column>
+                                <f:facet name="footer">
+      
+                                        Total Sub: <h:outputText value="#{detalleBean.totalSub}" />
+                                        <p:commandButton value="Calcular Sub" action="#{detalleBean.updateVal()}" style="float: right; "  >
+                                        </p:commandButton>
+                                </f:facet>
+                            </p:dataTable>
+                            <h:outputText />
+                            <h:outputText />
+                            <p:commandButton value="Confirmar" actionListener="#{compraBean.guardar}" update="growl" />
+                        </p:panel>
+                    </p:tab>
+                </p:wizard>
             </p:panel>
         </ui:define>
     </ui:composition>
