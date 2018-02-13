@@ -11,31 +11,31 @@
             <p:panel id="mainPnl" header="Administracion de Productos" style="width: 80%; margin: auto;">
                 <p:panel id="buscPnl" header="Busqueda">
                     <p:outputLabel for="filtroCmb" value="Categorias:"/>
-                    <p:selectOneMenu id="filtroCmb" value="#{productoBean.categoriaBusqueda}" >
+                    <p:selectOneMenu id="filtroCmb" value="#{productoBean.categoriaBusqueda}">
                         <f:selectItems var="categoria" value="#{productoBean.categorias}" itemLabel="#{categoria.nombre}" itemValue="#{categoria.codigo}"  />
                     </p:selectOneMenu>
-                    <p:commandButton id="buscarCmd" value="Buscar" actionListener="#{productoAdminBean.buscar()}" update="@form" />
+                    <p:commandButton id="buscarCmd" value="Buscar" actionListener="#{productoBean.buscar()}" update="@form" />
                 </p:panel>
-                <p:dataTable id="productosTbl" var="producto" value="#{productoAdminBean.productos}" 
-                             selectionMode="single" selection="#{productoAdminBean.productoSel}" rowKey="#{producto.codigo}">
-                    <p:ajax event="rowSelect" update="productosTbl" />
-                    <p:ajax event="rowUnselect" update="productosTbl" />
+                <p:dataTable id="productosTbl" var="producto" value="#{productoBean.productos}" 
+                             selectionMode="single" selection="#{productoBean.productoSel}" rowKey="#{producto.codigo}">
+                    <p:ajax event="rowSelect" update="@form" />
+                    <p:ajax event="rowUnselect" update="@form" />
                     <p:column headerText="Tipo" sortBy="#{producto.categoria.nombre}">
                         <h:outputText value="#{producto.categoria.nombre}" />
                     </p:column>
                     <p:column headerText="Nombre" sortBy="#{producto.nombre}">
                         <h:outputText value="#{producto.nombre}" >
-                            
+
                         </h:outputText>
                     </p:column>
                     <p:column headerText="Marca" sortBy="#{producto.marca}">
                         <h:outputText value="#{producto.marca}" >
-                            
+
                         </h:outputText>
                     </p:column>
                     <p:column headerText="Descripcion" sortBy="#{producto.descripcion}">
                         <h:outputText value="#{producto.descripcion}" >
-                            
+
                         </h:outputText>
                     </p:column>
                     <p:column headerText="Precio" sortBy="#{producto.precio}">
@@ -49,15 +49,44 @@
                     </p:column>
                 </p:dataTable>
                 <p:messages id="messages" showDetail="true" autoUpdate="true" closable="true" />
-                <p:commandButton id="modBtn" value="Modificar" actionListener="#{productoAdminBean.modificar()}" update="@form" disabled="#{productoAdmin.productoSel eq null}"/>
-                <p:commandButton value="Eliminar" actionListener="#{productoAdminBean.eliminar()}" update="@form" disabled="#{productoAdminBean.productoSel eq null}" >
-                    <p:confirm header="Confirmaci&#243;n" message="Desea eliminar el Producto: #{productoAdminBean.productoSel.nombre}}" icon="ui-icon-alert" />
+                <p:commandButton value="Agregar" actionListener="#{productoBean.agregar()}" update="@form"/>
+                <p:commandButton id="modBtn" value="Modificar" actionListener="#{productoBean.modificar()}" update="@form" disabled="#{productoBean.productoSel eq null}"/>
+                <p:commandButton value="Eliminar" actionListener="#{productoBean.eliminar()}" update="@form" disabled="#{productoBean.productoSel eq null}" >
+                    <p:confirm header="Confirmaci&#243;n" message="Desea eliminar el Producto: #{productoBean.productoSel.nombre}}" icon="ui-icon-alert" />
                 </p:commandButton>
-                
+                <p:panel header="#{productoBean.titulo} Producto" visible="#{productoBean.habilitaForm}">
+                    <p:panelGrid columns="1">
+                        <p:outputLabel for="codigo" value="Codigo" />
+                        <p:inputText id="codigo" value="#{productoBean.producto.codigo}" disabled="#{productoBean.enModificar}" />
+                        <p:outputLabel for="nombre" value="Nombre" />
+                        <p:inputText id="nombre" value="#{productoBean.producto.nombre}"  />
+                        <h:outputText value="Categoria: " />
+                        <h:selectOneMenu  >
+                            <f:selectItems id="tipo" value="#{productoBean.categorias}" var="categoria" itemValue="#{productoBean.producto.categoria.id}" itemLabel="#{categoria.nombre}"/>                          
+                        </h:selectOneMenu>
+                        
+                        <p:outputLabel for="descripcion" value="Marca" />
+                        <p:inputText id="descripcion" value="#{productoBean.producto.marca}"  />
+                        <p:outputLabel for="modelo" value="Precio" />
+                        <p:inputText id="modelo" value="#{productoBean.producto.precio}"  />
+                        <p:outputLabel for="precio" value="Precio de Venta" />
+                        <p:inputText id="precio" value="#{productoBean.producto.precioVenta}"/>
+
+                        <p:outputLabel for="stock" value="Stock" />
+                        <p:inputText id="stock" value="#{productoBean.producto.stock}"/>
+                        
+                        <p:outputLabel for="des" value="Descripcion" />
+                        <p:inputText id="des" value="#{productoBean.producto.descripcion}"/>
+                    </p:panelGrid>
+                    <p:commandButton value="Aceptar" actionListener="#{productoBean.guardar}" update="@form" />
+                    <p:commandButton value="Cancelar" actionListener="#{productoBean.cancelar}" update="@form" />
 
                 </p:panel>
 
-       
+
+            </p:panel>
+
+
             <p:confirmDialog global="true" showEffect="fade" hideEffect="fade">
                 <p:commandButton value="Si" type="button" styleClass="ui-confirmdialog-yes" icon="ui-icon-check" />
                 <p:commandButton value="No" type="button" styleClass="ui-confirmdialog-no" icon="ui-icon-close" />

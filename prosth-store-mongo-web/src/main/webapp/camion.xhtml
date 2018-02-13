@@ -16,11 +16,20 @@
                     <p:column headerText="Codigo">
                         <h:outputText value="#{camion.codigo}" />
                     </p:column>
-                    <p:column headerText="Nombre">
+                    <p:column headerText="Placa">
                         <h:outputText value="#{camion.placa}" />
                     </p:column>
-                    <p:column headerText="Descripcion">
+                    <p:column headerText="Modelo">
                         <h:outputText value="#{camion.modelo}" />
+                    </p:column>
+                    <p:column headerText="Marca">
+                        <h:outputText value="#{camion.marca}" />
+                    </p:column>
+                    <p:column headerText="Color">
+                        <h:outputText value="#{camion.color}" />
+                    </p:column>
+                    <p:column headerText="Conductor">
+                        <h:outputText value="#{camion.conductor.nombre}" />
                     </p:column>
                 </p:dataTable>
                 <p:messages id="messages" showDetail="true" autoUpdate="true" closable="true" />
@@ -33,10 +42,18 @@
                     <p:panelGrid columns="1">
                         <p:outputLabel for="codigo" value="Codigo" />
                         <p:inputText id="codigo" value="#{camionBean.camion.codigo}" disabled="#{camionBean.enModificar}" />
-                        <p:outputLabel for="nombre" value="Nombre" />
+                        <p:outputLabel for="nombre" value="Placa" />
                         <p:inputText id="nombre" value="#{camionBean.camion.placa}"  />
-                        <p:outputLabel for="descripcion" value="Descripci&#243;n" />
+                        <p:outputLabel for="descripcion" value="Modelo" />
                         <p:inputText id="descripcion" value="#{camionBean.camion.modelo}"  />
+                         <p:outputLabel for="marca" value="Marca" />
+                        <p:inputText id="marca" value="#{camionBean.camion.marca}"  />
+                         <p:outputLabel for="color" value="Color" />
+                        <p:inputText id="color" value="#{camionBean.camion.color}"  />
+                        <h:outputText value="Conductor: " />
+                        <p:selectOneMenu id="filtroCmb" >
+                            <f:selectItems var="camion" value="#{camionBean.conductores}" itemLabel="#{conductor.nombre}" itemValue="#{conductor.codigo}"  />
+                        </p:selectOneMenu>
                     </p:panelGrid>
                     <p:commandButton value="Aceptar" actionListener="#{camionBean.guardar}" update="@form" />
                     <p:commandButton value="Cancelar" actionListener="#{camionBean.cancelar}" update="@form" />

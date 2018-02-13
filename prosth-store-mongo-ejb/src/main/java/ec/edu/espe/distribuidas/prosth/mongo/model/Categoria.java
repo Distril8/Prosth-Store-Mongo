@@ -25,8 +25,8 @@ public class Categoria extends BaseEntity{
     private String nombre;
     private String descripcion;
     
-    public Categoria(Integer codigo) {
-        this.codigo = codigo;
+    public Categoria(Integer cod) {
+        this.codigo = cod;
     }
 
     public Categoria() {
@@ -81,6 +81,6 @@ public class Categoria extends BaseEntity{
 
     @Override
     public String toString() {
-        return "ec.edu.espe.distribuidas.prosth.mongo.model.Categoria[ codigo=" + codigo + " ]";
+        return "ec.edu.espe.distribuidas.prosth.mongo.model.Categoria[ cod=" + codigo + " ]";
     }
 }
