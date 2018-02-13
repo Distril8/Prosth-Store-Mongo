@@ -6,7 +6,9 @@ ec\edu\espe\distribuidas\prosth\mongo\dao\ProductoDAO.class
 ec\edu\espe\distribuidas\prosth\mongo\dao\CompraDAO.class
 ec\edu\espe\distribuidas\prosth\mongo\model\DetalleCompra.class
 ec\edu\espe\distribuidas\prosth\mongo\service\ProveedorService.class
+ec\edu\espe\distribuidas\prosth\mongo\dao\DetalleDAO.class
 ec\edu\espe\distribuidas\nosql\mongo\config\ConfigReader.class
+ec\edu\espe\distribuidas\prosth\mongo\service\DetalleService.class
 ec\edu\espe\distribuidas\prosth\mongo\dao\TipoUsuarioDAO.class
 ec\edu\espe\distribuidas\prosth\mongo\service\CategoriaService.class
 ec\edu\espe\distribuidas\nosql\mongo\config\ConfigDTO.class
@@ -18,6 +20,7 @@ ec\edu\espe\distribuidas\prosth\mongo\enums\ModoPagoEnum.class
 ec\edu\espe\distribuidas\prosth\mongo\service\ConductorService.class
 ec\edu\espe\distribuidas\prosth\mongo\model\Camion.class
 ec\edu\espe\distribuidas\prosth\mongo\model\Compra.class
+ec\edu\espe\distribuidas\prosth\mongo\model\Detalle.class
 ec\edu\espe\distribuidas\prosth\mongo\model\Conductor.class
 ec\edu\espe\distribuidas\prosth\mongo\service\CamionService.class
 ec\edu\espe\distribuidas\prosth\mongo\dao\ProveedorDAO.class
