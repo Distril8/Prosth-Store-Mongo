@@ -62,7 +62,7 @@
                         <p:inputText id="nombre" value="#{productoBean.producto.nombre}"  />
                         <h:outputText value="Categoria: " />
                         <h:selectOneMenu  value="#{productoBean.producto.nombreCategoria}">
-                            <f:selectItems id="tipo" value="#{productoBean.categorias}" var="categoria" itemValue="#{productoBean.producto.nombreCategoria}" itemLabel="#{categoria.nombre}"/>                          
+                            <f:selectItems id="tipo" value="#{productoBean.categorias}" var="categoria" itemValue="#{categoria.nombre}" itemLabel="#{categoria.nombre}"/>                          
                         </h:selectOneMenu>
                         
                         <p:outputLabel for="descripcion" value="Marca" />

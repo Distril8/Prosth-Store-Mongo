@@ -109,10 +109,9 @@
                                     <p:inputText  value="#{productoBean.producto.codigo}" disabled="#{productoBean.enModificar}"  />
                                     <h:outputText value="Nombre: " />
                                     <p:inputText value="#{productoBean.producto.nombre}" disabled="#{productoBean.enModificar}" /> 
-                                    <h:outputText value="Categoria: " />
-
-                                    <p:selectOneMenu id="filtroCmb" disabled="#{productoBean.enModificar}" >
-                                        <f:selectItems var="categoria" value="#{productoBean.categorias}" itemLabel="#{categoria.nombre}" itemValue="#{productoBean.producto.nombreCategoria}"  />
+                                  <p:outputLabel for="filtroCmb" value="Conductor: " />
+                                  <p:selectOneMenu id="filtroCmb" value="#{productoBean.producto.nombreCategoria}"  disabled="#{productoBean.enModificar}" >
+                                        <f:selectItems var="categoria" value="#{productoBean.categorias}" itemLabel="#{categoria.nombre}" itemValue="#{categoria.nombre}"  />
                                     </p:selectOneMenu>
                                     <h:outputText value="Marca: " />
                                     <p:inputText value="#{productoBean.producto.marca}" disabled="#{productoBean.enModificar}" />
