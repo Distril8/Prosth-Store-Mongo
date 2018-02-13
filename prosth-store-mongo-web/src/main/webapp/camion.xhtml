@@ -52,11 +52,9 @@
                         <p:inputText id="color" value="#{camionBean.camion.color}"  />
                         <p:outputLabel for="filtroCmb" value="Conductor: " />
                         <p:selectOneMenu id="filtroCmb" value="#{camionBean.camion.nombreConductor}"  >
-                            <f:selectItems id="tipo" value="#{camionBean.conductores}" var="conductor" itemLabel="#{conductor.nombre}" itemValue="#{camionBean.camion.nombreConductor}" />                          
+                            <f:selectItems id="tipo" value="#{camionBean.conductores}" var="conductor" itemLabel="#{conductor.nombre}" itemValue="#{conductor.nombre}" />                          
                         </p:selectOneMenu>
-              
-                        
-                        
+                       
                     </p:panelGrid>
                     <p:commandButton value="Aceptar" actionListener="#{camionBean.guardar}" update="@form" />
                     <p:commandButton value="Cancelar" actionListener="#{camionBean.cancelar}" update="@form" />

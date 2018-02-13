@@ -29,6 +29,7 @@ public class Camion extends BaseEntity {
     private String nombreConductor;
 
     public Camion() {
+       
     }
 
     public Integer getCodigo() {
@@ -109,8 +110,10 @@ public class Camion extends BaseEntity {
 
     @Override
     public String toString() {
-        return "ec.edu.espe.proyecto.protesis.model.Producto[ codProducto=" + codigo + " ]";
+        return "Camion{" + "codigo=" + codigo + ", conductor=" + conductor + ", placa=" + placa + ", modelo=" + modelo + ", color=" + color + ", marca=" + marca + ", nombreConductor=" + nombreConductor + '}';
     }
+
+    
     
 
 }

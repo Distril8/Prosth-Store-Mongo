@@ -49,6 +49,7 @@ public class CamionBean extends BaseBean implements Serializable {
     @Override
     public void agregar() {
         this.camion = new Camion();
+        this.conductores = this.conductorService.obtenerTodos();
         super.agregar();
         
     }
@@ -87,6 +88,7 @@ public class CamionBean extends BaseBean implements Serializable {
     public void cancelar() {
         super.reset();
         this.camion = new Camion();
+        this.conductores = this.conductorService.obtenerTodos();
     }
 
     public void guardar() {
@@ -104,6 +106,7 @@ public class CamionBean extends BaseBean implements Serializable {
         super.reset();
         this.camion = new Camion();
         this.camiones = this.camionService.obtenerTodos();
+        this.conductores = this.conductorService.obtenerTodos();
     }
     
     public void guardarConductor(){

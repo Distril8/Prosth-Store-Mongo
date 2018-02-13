@@ -34,8 +34,22 @@ public class CamionService {
     public List<Camion> obtenerTodos() {
         return this.camionDao.find().asList();
     }
-
+    
+    
     public void crear(Camion camion) {
+        List<Camion> aux = this.camionDao.find().asList();
+        Integer codigo;
+        if (aux.isEmpty()) {
+            codigo = 1;
+        } else {
+            Integer count = aux.size();
+            Camion last = aux.get(count - 1);
+            codigo = last.getCodigo() + 1;
+        }
+        camion.setCodigo(codigo);
+        this.camionDao.save(camion);
+    }
+    public void crear1(Camion camion) {
         this.camionDao.save(camion);
     }
 
