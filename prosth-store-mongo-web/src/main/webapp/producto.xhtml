@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//ES" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:ui="http://java.sun.com/jsf/facelets">
+    <ui:composition template="/templates/plantilla.xhtml">
+        <ui:define name="contenido">
+            <p:panel id="mainPnl" header="Administracion de Productos" style="width: 80%; margin: auto;">
+                <p:panel id="buscPnl" header="Busqueda">
+                    <p:outputLabel for="filtroCmb" value="Categorias:"/>
+                    <p:selectOneMenu id="filtroCmb" value="#{productoBean.categoriaBusqueda}" >
+                        <f:selectItems var="categoria" value="#{productoBean.categorias}" itemLabel="#{categoria.nombre}" itemValue="#{categoria.codigo}"  />
+                    </p:selectOneMenu>
+                    <p:commandButton id="buscarCmd" value="Buscar" actionListener="#{productoAdminBean.buscar()}" update="@form" />
+                </p:panel>
+                <p:dataTable id="productosTbl" var="producto" value="#{productoAdminBean.productos}" 
+                             selectionMode="single" selection="#{productoAdminBean.productoSel}" rowKey="#{producto.codigo}">
+                    <p:ajax event="rowSelect" update="productosTbl" />
+                    <p:ajax event="rowUnselect" update="productosTbl" />
+                    <p:column headerText="Tipo" sortBy="#{producto.categoria.nombre}">
+                        <h:outputText value="#{producto.categoria.nombre}" />
+                    </p:column>
+                    <p:column headerText="Nombre" sortBy="#{producto.nombre}">
+                        <h:outputText value="#{producto.nombre}" >
+                            
+                        </h:outputText>
+                    </p:column>
+                    <p:column headerText="Marca" sortBy="#{producto.marca}">
+                        <h:outputText value="#{producto.marca}" >
+                            
+                        </h:outputText>
+                    </p:column>
+                    <p:column headerText="Descripcion" sortBy="#{producto.descripcion}">
+                        <h:outputText value="#{producto.descripcion}" >
+                            
+                        </h:outputText>
+                    </p:column>
+                    <p:column headerText="Precio" sortBy="#{producto.precio}">
+                        <h:outputText value="#{producto.precio}" >
+                            <f:convertNumber minFractionDigits="2" maxFractionDigits="2" currencySymbol="$"/>
+                        </h:outputText>
+                    </p:column>
+                    <p:column headerText="Stock" sortBy="#{producto.stock}">
+                        <h:outputText value="#{producto.stock}" >
+                        </h:outputText>
+                    </p:column>
+                </p:dataTable>
+                <p:messages id="messages" showDetail="true" autoUpdate="true" closable="true" />
+                <p:commandButton id="modBtn" value="Modificar" actionListener="#{productoAdminBean.modificar()}" update="@form" disabled="#{productoAdmin.productoSel eq null}"/>
+                <p:commandButton value="Eliminar" actionListener="#{productoAdminBean.eliminar()}" update="@form" disabled="#{productoAdminBean.productoSel eq null}" >
+                    <p:confirm header="Confirmaci&#243;n" message="Desea eliminar el Producto: #{productoAdminBean.productoSel.nombre}}" icon="ui-icon-alert" />
+                </p:commandButton>
+                
+
+                </p:panel>
+
+       
+            <p:confirmDialog global="true" showEffect="fade" hideEffect="fade">
+                <p:commandButton value="Si" type="button" styleClass="ui-confirmdialog-yes" icon="ui-icon-check" />
+                <p:commandButton value="No" type="button" styleClass="ui-confirmdialog-no" icon="ui-icon-close" />
+            </p:confirmDialog>
+        </ui:define>
+    </ui:composition>
+</html>

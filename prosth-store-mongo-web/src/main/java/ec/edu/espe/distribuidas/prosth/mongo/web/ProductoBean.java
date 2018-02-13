@@ -71,6 +71,8 @@ public class ProductoBean extends BaseBean implements Serializable {
         this.producto.setImagen(this.productoSel.getImagen());
     }
     
+    
+    
     public void eliminar() {
         try {
             this.productoService.eliminar(this.productoSel.getCodigo());
@@ -96,7 +98,7 @@ public class ProductoBean extends BaseBean implements Serializable {
                 FacesUtil.addMessageInfo("Se agregó el Producto: " + this.producto.getNombre());
             } else {
                 this.productoService.modificar(this.producto);
-                FacesUtil.addMessageInfo("Se modific\u00f3 el Proveedor: " + this.producto.getNombre());
+                FacesUtil.addMessageInfo("Se modific\u00f3 el Producto: " + this.producto.getNombre());
             }
         } catch (Exception ex) {
             FacesUtil.addMessageError(null, "Ocurrí\u00f3 un error al actualizar la informaci\u00f3n");
