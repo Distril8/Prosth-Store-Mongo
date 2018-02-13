@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//ES" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:ui="http://java.sun.com/jsf/facelets">
+    <ui:composition template="/templates/plantillaUsuario.xhtml">
+        <ui:define name="contenido">
+            <p:panel id="mainPnl" header="Vista de Productos" style="width: 80%; margin: auto;">
+                <p:carousel value="#{productoAdminBean.productos}"  var="producto" itemStyle="text-align:center" responsive="true">
+                    <p:panelGrid columns="2" style="width:100%;margin:10px 0px" columnClasses="label,value" layout="grid" styleClass="ui-panelgrid-blank">
+                        <f:facet name="header">
+                            <p:graphicImage value="/imagesP/#{producto.imagen}.png" height="124px"/> 
+                        </f:facet>
+                        <h:outputText value="Nombre:" />
+                        <h:outputText value="#{producto.nombre}" style="font-weight: bold"/>
+                        <h:outputText value="Marca:" />
+                        <h:outputText value="#{producto.marca}" style="font-weight: bold"/>
+                        <h:outputText value="Stock:" />
+                        <h:outputText value="#{producto.stock}" style="font-weight: bold"/>
+                        <h:outputText value="Precio:" />
+                        <h:outputText value="$#{producto.precio}" style="font-weight: bold"/>
+                        </p:panelGrid>
+                </p:carousel>
+            </p:panel>
+        </ui:define>
+    </ui:composition>
+</html>
