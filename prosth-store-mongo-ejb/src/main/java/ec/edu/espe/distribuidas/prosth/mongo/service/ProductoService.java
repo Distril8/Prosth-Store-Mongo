@@ -13,6 +13,7 @@ import javax.annotation.PostConstruct;
 import javax.ejb.EJB;
 import javax.ejb.LocalBean;
 import javax.ejb.Stateless;
+import org.bson.Document;
 
 /**
  *
@@ -33,18 +34,21 @@ public class ProductoService {
     public List<Producto> obtenerTodos() {
         return this.productoDao.find().asList();
     }
+    
+   
 
     public Producto obtenerPorCodigo(Integer codigo) {
         return this.productoDao.findOne("codigo", codigo);
     }
 
     public void crear(Producto producto) {
-        Producto aux = this.productoDao.findOne("codigo", producto.getCodigo());
-        producto.setId(aux.getId());
+        
         this.productoDao.save(producto);
     }
 
     public void modificar(Producto producto) {
+        Producto aux = this.productoDao.findOne("codigo", producto.getCodigo());
+        producto.setId(aux.getId());
         this.productoDao.save(producto);
     }
 

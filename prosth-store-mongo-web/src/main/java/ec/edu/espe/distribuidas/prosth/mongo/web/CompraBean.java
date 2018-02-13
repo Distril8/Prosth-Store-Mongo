@@ -16,6 +16,7 @@ import ec.edu.espe.distribuidas.prosth.mongo.service.CompraService;
 import ec.edu.espe.distribuidas.prosth.mongo.service.ProveedorService;
 import ec.edu.espe.distribuidas.prosth.mongo.web.util.FacesUtil;
 import java.io.Serializable;
+import java.util.Date;
 import java.util.List;
 import javax.annotation.PostConstruct;
 import javax.faces.view.ViewScoped;
@@ -54,6 +55,7 @@ public class CompraBean extends BaseBean implements Serializable {
     }
 
    
+
     @Override
     public void agregar() {
         this.compra = new Compra();
@@ -61,7 +63,17 @@ public class CompraBean extends BaseBean implements Serializable {
         
     }
 
-
+ 
+    public void detalle() {
+        this.compra = new Compra();
+ 
+        
+    }
+    
+    public Date fecha(){
+        Date fecha = new Date();
+        return fecha;
+    }
 //    @Override
 //    public void modificar() {
 //        super.modificar();

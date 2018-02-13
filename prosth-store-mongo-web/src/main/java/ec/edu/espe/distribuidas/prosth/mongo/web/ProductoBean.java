@@ -11,7 +11,9 @@ package ec.edu.espe.distribuidas.prosth.mongo.web;
 
 
 
+import ec.edu.espe.distribuidas.prosth.mongo.model.Categoria;
 import ec.edu.espe.distribuidas.prosth.mongo.model.Producto;
+import ec.edu.espe.distribuidas.prosth.mongo.service.CategoriaService;
 import ec.edu.espe.distribuidas.prosth.mongo.service.ProductoService;
 import ec.edu.espe.distribuidas.prosth.mongo.web.util.FacesUtil;
 import java.io.Serializable;
@@ -30,21 +32,23 @@ import javax.inject.Named;
 public class ProductoBean extends BaseBean implements Serializable {
 
     private List<Producto> productos;
-
+    private List<Categoria> categorias;
     private Producto producto;
-
+     private List<Producto> productosSel;
     private Producto productoSel;
 
     @Inject
     private ProductoService productoService;
 
+    @Inject
+    private CategoriaService categoriaService;
+    
     @PostConstruct
     public void init() {
         this.productos = this.productoService.obtenerTodos();
+        this.categorias = this.categoriaService.obtenerTodos();
         this.producto = new Producto();
     }
-
- 
 
     @Override
     public void agregar() {
@@ -63,6 +67,7 @@ public class ProductoBean extends BaseBean implements Serializable {
         this.producto.setPrecioVenta(this.productoSel.getPrecioVenta());
         this.producto.setStock(this.productoSel.getStock());
         this.producto.setDescripcion(this.productoSel.getDescripcion());
+        this.producto.setCantidad(this.productoSel.getCantidad());
         this.producto.setImagen(this.productoSel.getImagen());
     }
     
@@ -123,6 +128,22 @@ public class ProductoBean extends BaseBean implements Serializable {
 
     public void setProductoSel(Producto productoSel) {
         this.productoSel = productoSel;
+    }
+
+    public List<Categoria> getCategorias() {
+        return categorias;
+    }
+
+    public void setCategorias(List<Categoria> categorias) {
+        this.categorias = categorias;
+    }
+
+    public List<Producto> getProductosSel() {
+        return productosSel;
+    }
+
+    public void setProductosSel(List<Producto> productosSel) {
+        this.productosSel = productosSel;
     }
 
    
