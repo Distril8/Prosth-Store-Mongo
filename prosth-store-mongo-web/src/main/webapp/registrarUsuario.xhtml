@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//ES" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:ui="http://java.sun.com/jsf/facelets">
+    <ui:composition template="/templates/plantillaUsuario.xhtml">
+        <ui:define name="contenido">
+            <p:panel id="mainPnl" header="Registrarse" style="width: 80%; margin: auto;">
+                <p:messages id="messages" showDetail="true" autoUpdate="true" closable="true" />
+                <p:commandButton value="Agregar" actionListener="#{registrarUBean.agregar()}" update="@form"/>
+                <p:panel header="#{registrarUBean.titulo} Tipo Usuario" visible="#{registrarUBean.habilitaForm}">
+                    <p:panelGrid columns="2">
+                        <p:outputLabel for="ci" value="Cedula de Identidad" />
+                        <p:inputText id="ci" value="#{registrarUBean.usuario.ci}"/>
+                        <p:outputLabel for="nombre" value="Nombre" />
+                        <p:inputText id="nombre" value="#{registrarUBean.usuario.nombre}"  />
+                        <p:outputLabel for="apellido" value="Apellido" />
+                        <p:inputText id="apellido" value="#{registrarUBean.usuario.apellido}"  />
+                        <p:outputLabel for="password" value="Clave" />
+                        <p:password id="password" value="#{registrarUBean.usuario.password}"  />
+                        <p:outputLabel for="email" value="Email" />
+                        <p:inputText id="email" value="#{registrarUBean.usuario.email}"  />
+                        <p:outputLabel for="fechaNacimiento" value="FechaNacimiento" />
+                        <p:calendar id="fechaNacimiento" value="#{registrarUBean.usuario.fechaNacimiento}" showOn="button" pattern="MM/dd/yyyy" />
+                        <p:outputLabel for="codPostal" value="Codigo Postal" />
+                        <p:inputText id="codPostal" value="#{registrarUBean.usuario.codPostal}"  />
+                        <p:outputLabel for="filtroCmb" value="Provincia:"/>
+                        <p:selectOneMenu id="filtroCmb" value="#{registrarUBean.provinciaBusqueda}" >
+                            <f:selectItems var="provincia" value="#{registrarUBean.provincias}" itemLabel="#{provincia}" itemValue="#{provincia}"  />
+                        </p:selectOneMenu>
+                        <p:outputLabel for="filtroCmb1" value="Ciudad:"/>
+                        <p:selectOneMenu id="filtroCmb1" value="#{registrarUBean.ciudadBusqueda}" >
+                            <f:selectItems var="ciudad" value="#{registrarUBean.ciudades}" itemLabel="#{ciudad}" itemValue="#{ciudad}"  />
+                        </p:selectOneMenu>
+                        <p:outputLabel for="calleP" value="Calle Principal" />
+                        <p:inputText id="calleP" value="#{registrarUBean.usuario.callePrincipal}"  />
+                        <p:outputLabel for="calleS" value="Calle Secundaria" />
+                        <p:inputText id="calleS" value="#{registrarUBean.usuario.calleSecundaria}"  />
+
+                    </p:panelGrid>
+                    <p:commandButton value="Aceptar" actionListener="#{registrarUBean.guardar}" update="@form" />
+                    <p:commandButton value="Cancelar" action="indexU" update="@form" />
+                </p:panel>
+            </p:panel>
+
+            <p:confirmDialog global="true" showEffect="fade" hideEffect="fade">
+                <p:commandButton value="Si" type="button" styleClass="ui-confirmdialog-yes" icon="ui-icon-check" />
+                <p:commandButton value="No" type="button" styleClass="ui-confirmdialog-no" icon="ui-icon-close" />
+            </p:confirmDialog>
+        </ui:define>
+    </ui:composition>
+</html>

@@ -5,7 +5,9 @@ ec\edu\espe\distribuidas\nosql\mongo\MongoPersistence.class
 ec\edu\espe\distribuidas\prosth\mongo\dao\ProductoDAO.class
 ec\edu\espe\distribuidas\prosth\mongo\dao\CompraDAO.class
 ec\edu\espe\distribuidas\prosth\mongo\model\DetalleCompra.class
+ec\edu\espe\distribuidas\prosth\mongo\service\UsuarioService.class
 ec\edu\espe\distribuidas\prosth\mongo\service\ProveedorService.class
+ec\edu\espe\distribuidas\prosth\mongo\service\AutenticacionService.class
 ec\edu\espe\distribuidas\prosth\mongo\dao\DetalleDAO.class
 ec\edu\espe\distribuidas\nosql\mongo\config\ConfigReader.class
 ec\edu\espe\distribuidas\prosth\mongo\service\DetalleService.class
@@ -14,6 +16,8 @@ ec\edu\espe\distribuidas\prosth\mongo\service\CategoriaService.class
 ec\edu\espe\distribuidas\nosql\mongo\config\ConfigDTO.class
 ec\edu\espe\distribuidas\prosth\mongo\service\ProductoService.class
 ec\edu\espe\distribuidas\prosth\mongo\service\CompraService.class
+ec\edu\espe\distribuidas\prosth\mongo\service\CarritoService.class
+ec\edu\espe\distribuidas\prosth\mongo\dao\CarritoDAO.class
 ec\edu\espe\distribuidas\prosth\mongo\model\TipoUsuario.class
 ec\edu\espe\distribuidas\prosth\mongo\model\Proveedor.class
 ec\edu\espe\distribuidas\prosth\mongo\enums\ModoPagoEnum.class
@@ -25,8 +29,11 @@ ec\edu\espe\distribuidas\prosth\mongo\model\Conductor.class
 ec\edu\espe\distribuidas\prosth\mongo\service\CamionService.class
 ec\edu\espe\distribuidas\prosth\mongo\dao\ProveedorDAO.class
 ec\edu\espe\distribuidas\prosth\mongo\dao\ConductorDAO.class
+ec\edu\espe\distribuidas\prosth\mongo\model\Usuario.class
+ec\edu\espe\distribuidas\prosth\mongo\model\Carrito.class
 ec\edu\espe\distribuidas\prosth\mongo\model\ModoPago.class
 ec\edu\espe\distribuidas\prosth\mongo\service\TipoUsuarioService.class
 ec\edu\espe\distribuidas\prosth\mongo\NewSessionBean.class
 ec\edu\espe\distribuidas\nosql\mongo\BaseEntity.class
 ec\edu\espe\distribuidas\prosth\mongo\dao\CamionDAO.class
+ec\edu\espe\distribuidas\prosth\mongo\dao\UsuarioDAO.class

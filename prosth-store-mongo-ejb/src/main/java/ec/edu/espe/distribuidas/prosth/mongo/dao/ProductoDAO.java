@@ -30,9 +30,7 @@ public class ProductoDAO extends BasicDAO<Producto, ObjectId> {
     }
 
     
-    public List<Producto> findbyCategoria (Integer Codigo){
-        CategoriaService categoriaPorCodigo = null;
-        Categoria categoria = categoriaPorCodigo.obtenerPorCodigo(Codigo);
+    public List<Producto> findbyCategoria (Categoria categoria){
         Query<Producto> q = getDatastore().createQuery(Producto.class);
         q.criteria("categoria").equal(categoria);
         return q.asList();

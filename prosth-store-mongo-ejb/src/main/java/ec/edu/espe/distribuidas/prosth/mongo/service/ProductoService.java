@@ -7,13 +7,13 @@ package ec.edu.espe.distribuidas.prosth.mongo.service;
 
 import ec.edu.espe.distribuidas.nosql.mongo.MongoPersistence;
 import ec.edu.espe.distribuidas.prosth.mongo.dao.ProductoDAO;
+import ec.edu.espe.distribuidas.prosth.mongo.model.Categoria;
 import ec.edu.espe.distribuidas.prosth.mongo.model.Producto;
 import java.util.List;
 import javax.annotation.PostConstruct;
 import javax.ejb.EJB;
 import javax.ejb.LocalBean;
 import javax.ejb.Stateless;
-import org.bson.Document;
 
 /**
  *
@@ -41,8 +41,8 @@ public class ProductoService {
         return this.productoDao.findOne("codigo", codigo);
     }
     
-    public List<Producto> buscarPorTipo(Integer codigo) {
-        return this.productoDao.findbyCategoria(codigo);
+    public List<Producto> buscarPorTipo(Categoria categoria) {
+        return this.productoDao.findbyCategoria(categoria);
     }
 
     public void crear(Producto producto) {
