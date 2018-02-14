@@ -33,10 +33,11 @@ public class ProductoBean extends BaseBean implements Serializable {
 
     private List<Producto> productos;
     private List<Categoria> categorias;
+     private Integer categoriaBusqueda;
     private Producto producto;
      private List<Producto> productosSel;
     private Producto productoSel;
-
+    
     @Inject
     private ProductoService productoService;
 
@@ -69,9 +70,15 @@ public class ProductoBean extends BaseBean implements Serializable {
         this.producto.setDescripcion(this.productoSel.getDescripcion());
         this.producto.setCantidad(this.productoSel.getCantidad());
         this.producto.setImagen(this.productoSel.getImagen());
+        this.producto.setNombreCategoria(this.productoSel.getNombreCategoria());
     }
     
-    
+    public void buscar() {
+        Categoria categoriaNueva = this.categoriaService.obtenerPorCodigo(this.categoriaBusqueda);
+        this.productos = this.productoService.buscarPorTipo(categoriaNueva);
+        System.out.println("Valor para categoriaBusqueda: " + categoriaNueva.getNombre());
+    }
+
     
     public void eliminar() {
         try {
@@ -146,6 +153,14 @@ public class ProductoBean extends BaseBean implements Serializable {
 
     public void setProductosSel(List<Producto> productosSel) {
         this.productosSel = productosSel;
+    }
+
+    public Integer getCategoriaBusqueda() {
+        return categoriaBusqueda;
+    }
+
+    public void setCategoriaBusqueda(Integer categoriaBusqueda) {
+        this.categoriaBusqueda = categoriaBusqueda;
     }
 
    

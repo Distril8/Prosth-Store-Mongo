@@ -24,11 +24,14 @@ C:\Users\js_cm\OneDrive\Documentos\NetBeansProjects\Proyecto-segundo\last\Prosth
 C:\Users\js_cm\OneDrive\Documentos\NetBeansProjects\Proyecto-segundo\last\Prosth-Store-Mongo\prosth-store-mongo-ejb\src\main\java\ec\edu\espe\distribuidas\prosth\mongo\service\ConductorService.java
 C:\Users\js_cm\OneDrive\Documentos\NetBeansProjects\Proyecto-segundo\last\Prosth-Store-Mongo\prosth-store-mongo-ejb\src\main\java\ec\edu\espe\distribuidas\prosth\mongo\dao\CategoriaDAO.java
 C:\Users\js_cm\OneDrive\Documentos\NetBeansProjects\Proyecto-segundo\last\Prosth-Store-Mongo\prosth-store-mongo-ejb\src\main\java\ec\edu\espe\distribuidas\prosth\mongo\model\Producto.java
+C:\Users\js_cm\OneDrive\Documentos\NetBeansProjects\Proyecto-segundo\last\Prosth-Store-Mongo\prosth-store-mongo-ejb\src\main\java\ec\edu\espe\distribuidas\prosth\mongo\model\Entrega.java
 C:\Users\js_cm\OneDrive\Documentos\NetBeansProjects\Proyecto-segundo\last\Prosth-Store-Mongo\prosth-store-mongo-ejb\src\main\java\ec\edu\espe\distribuidas\prosth\mongo\dao\CompraDAO.java
+C:\Users\js_cm\OneDrive\Documentos\NetBeansProjects\Proyecto-segundo\last\Prosth-Store-Mongo\prosth-store-mongo-ejb\src\main\java\ec\edu\espe\distribuidas\prosth\mongo\dao\EntregaDAO.java
 C:\Users\js_cm\OneDrive\Documentos\NetBeansProjects\Proyecto-segundo\last\Prosth-Store-Mongo\prosth-store-mongo-ejb\src\main\java\ec\edu\espe\distribuidas\prosth\mongo\model\Camion.java
 C:\Users\js_cm\OneDrive\Documentos\NetBeansProjects\Proyecto-segundo\last\Prosth-Store-Mongo\prosth-store-mongo-ejb\src\main\java\ec\edu\espe\distribuidas\prosth\mongo\service\CamionService.java
 C:\Users\js_cm\OneDrive\Documentos\NetBeansProjects\Proyecto-segundo\last\Prosth-Store-Mongo\prosth-store-mongo-ejb\src\main\java\ec\edu\espe\distribuidas\prosth\mongo\dao\UsuarioDAO.java
 C:\Users\js_cm\OneDrive\Documentos\NetBeansProjects\Proyecto-segundo\last\Prosth-Store-Mongo\prosth-store-mongo-ejb\src\main\java\ec\edu\espe\distribuidas\prosth\mongo\service\DetalleService.java
+C:\Users\js_cm\OneDrive\Documentos\NetBeansProjects\Proyecto-segundo\last\Prosth-Store-Mongo\prosth-store-mongo-ejb\src\main\java\ec\edu\espe\distribuidas\prosth\mongo\service\EntregaService.java
 C:\Users\js_cm\OneDrive\Documentos\NetBeansProjects\Proyecto-segundo\last\Prosth-Store-Mongo\prosth-store-mongo-ejb\src\main\java\ec\edu\espe\distribuidas\prosth\mongo\dao\ProductoDAO.java
 C:\Users\js_cm\OneDrive\Documentos\NetBeansProjects\Proyecto-segundo\last\Prosth-Store-Mongo\prosth-store-mongo-ejb\src\main\java\ec\edu\espe\distribuidas\prosth\mongo\model\DetalleCompra.java
 C:\Users\js_cm\OneDrive\Documentos\NetBeansProjects\Proyecto-segundo\last\Prosth-Store-Mongo\prosth-store-mongo-ejb\src\main\java\ec\edu\espe\distribuidas\prosth\mongo\service\ProveedorService.java

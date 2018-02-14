@@ -20,10 +20,12 @@ ec\edu\espe\distribuidas\prosth\mongo\service\CarritoService.class
 ec\edu\espe\distribuidas\prosth\mongo\dao\CarritoDAO.class
 ec\edu\espe\distribuidas\prosth\mongo\model\TipoUsuario.class
 ec\edu\espe\distribuidas\prosth\mongo\model\Proveedor.class
+ec\edu\espe\distribuidas\prosth\mongo\model\Entrega.class
 ec\edu\espe\distribuidas\prosth\mongo\enums\ModoPagoEnum.class
 ec\edu\espe\distribuidas\prosth\mongo\service\ConductorService.class
 ec\edu\espe\distribuidas\prosth\mongo\model\Camion.class
 ec\edu\espe\distribuidas\prosth\mongo\model\Compra.class
+ec\edu\espe\distribuidas\prosth\mongo\service\EntregaService.class
 ec\edu\espe\distribuidas\prosth\mongo\model\Detalle.class
 ec\edu\espe\distribuidas\prosth\mongo\model\Conductor.class
 ec\edu\espe\distribuidas\prosth\mongo\service\CamionService.class
@@ -31,6 +33,7 @@ ec\edu\espe\distribuidas\prosth\mongo\dao\ProveedorDAO.class
 ec\edu\espe\distribuidas\prosth\mongo\dao\ConductorDAO.class
 ec\edu\espe\distribuidas\prosth\mongo\model\Usuario.class
 ec\edu\espe\distribuidas\prosth\mongo\model\Carrito.class
+ec\edu\espe\distribuidas\prosth\mongo\dao\EntregaDAO.class
 ec\edu\espe\distribuidas\prosth\mongo\model\ModoPago.class
 ec\edu\espe\distribuidas\prosth\mongo\service\TipoUsuarioService.class
 ec\edu\espe\distribuidas\prosth\mongo\NewSessionBean.class

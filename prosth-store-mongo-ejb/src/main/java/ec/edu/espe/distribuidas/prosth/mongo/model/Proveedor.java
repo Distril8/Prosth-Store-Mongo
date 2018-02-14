@@ -26,6 +26,7 @@ public class Proveedor extends BaseEntity {
     private Integer codigo;
     private String nombre;
     private String descripcion;
+    private String email;
 
     public Proveedor() {
     }
@@ -36,6 +37,14 @@ public class Proveedor extends BaseEntity {
 
     public void setCodigo(Integer codigo) {
         this.codigo = codigo;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
     }
 
     

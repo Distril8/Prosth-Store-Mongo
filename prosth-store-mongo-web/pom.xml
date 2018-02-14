@@ -47,6 +47,12 @@
             <scope>provided</scope>
         </dependency>
         <dependency>
+            <groupId>javax.mail</groupId>
+            <artifactId>mail</artifactId>
+            <version>1.4.7</version>
+            <scope>compile</scope>
+        </dependency>
+        <dependency>
             <groupId>ec.edu.espe.distribuidas.prosth.mongo</groupId>
             <artifactId>prosth-store-mongo-ejb</artifactId>
             <version>1</version>
