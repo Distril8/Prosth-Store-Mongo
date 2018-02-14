@@ -25,7 +25,7 @@ import javax.inject.Named;
  */
 @Named
 @ViewScoped
-public class ProductoBean extends BaseBean implements Serializable {
+public class ProductoBean1 extends BaseBean implements Serializable {
 
     private List<Producto> productos;
     private List<Producto> productosStock;
@@ -43,9 +43,10 @@ public class ProductoBean extends BaseBean implements Serializable {
 
     @PostConstruct
     public void init() {
-        this.productos = this.productoService.obtenerTodos();
+       // this.productos = this.productoService.buscarPorStock(3);
         this.categorias = this.categoriaService.obtenerTodos();
         this.producto = new Producto();
+        this.productos =  this.productoService.obtenerTodos();
     }
 
     @Override

@@ -65,7 +65,8 @@ public class ProductoAdminBean extends BaseBean implements Serializable {
         this.productos = this.productoService.buscarPorTipo(categoriaNueva.getNombre());
         System.out.println("Valor para categoriaBusqueda: " + categoriaNueva.getNombre());
     }
-
+    
+    
     @Override
     public void modificar() {
         super.modificar();

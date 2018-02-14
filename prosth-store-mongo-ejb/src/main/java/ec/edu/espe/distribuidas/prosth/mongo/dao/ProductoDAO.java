@@ -35,6 +35,14 @@ public class ProductoDAO extends BasicDAO<Producto, ObjectId> {
         q.criteria("nombreCategoria").equal(nombreCategoria);
         return q.asList();
     }
+    
+    public List<Producto> findbyStock (Integer stock){
+        
+        Query<Producto> q = getDatastore().createQuery(Producto.class);
+        q.criteria("stock").lessThanOrEq(stock);
+        q.where("");
+        return q.asList();
+    }
 
 //     public void ProductoByCategoria(String categoria){
 //        // We return documents with the find method by setting a <b>criteria</ b> element equal to the cuisine.

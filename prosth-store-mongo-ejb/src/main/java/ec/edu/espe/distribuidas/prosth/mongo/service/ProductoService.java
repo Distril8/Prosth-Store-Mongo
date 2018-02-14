@@ -44,6 +44,10 @@ public class ProductoService {
     public List<Producto> buscarPorTipo(String nombreCategoria) {
         return this.productoDao.findbyCategoria(nombreCategoria);
     }
+    
+    public List<Producto> buscarPorStock(Integer stock) {
+        return this.productoDao.findbyStock(stock);
+    }
 
     public void crear(Producto producto) {
         
