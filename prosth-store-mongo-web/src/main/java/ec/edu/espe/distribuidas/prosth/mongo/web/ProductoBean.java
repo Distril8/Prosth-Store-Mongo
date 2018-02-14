@@ -75,7 +75,7 @@ public class ProductoBean extends BaseBean implements Serializable {
     
     public void buscar() {
         Categoria categoriaNueva = this.categoriaService.obtenerPorCodigo(this.categoriaBusqueda);
-        this.productos = this.productoService.buscarPorTipo(categoriaNueva);
+        this.productos = this.productoService.buscarPorTipo(categoriaNueva.getNombre());
         System.out.println("Valor para categoriaBusqueda: " + categoriaNueva.getNombre());
     }
 

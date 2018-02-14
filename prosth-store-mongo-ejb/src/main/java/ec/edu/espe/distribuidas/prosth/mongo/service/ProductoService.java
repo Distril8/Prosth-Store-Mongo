@@ -41,8 +41,8 @@ public class ProductoService {
         return this.productoDao.findOne("codigo", codigo);
     }
     
-    public List<Producto> buscarPorTipo(Categoria categoria) {
-        return this.productoDao.findbyCategoria(categoria);
+    public List<Producto> buscarPorTipo(String nombreCategoria) {
+        return this.productoDao.findbyCategoria(nombreCategoria);
     }
 
     public void crear(Producto producto) {
