@@ -32,6 +32,7 @@ import javax.inject.Named;
 public class ProductoBean extends BaseBean implements Serializable {
 
     private List<Producto> productos;
+    private List<Producto> productosStock;
     private List<Categoria> categorias;
      private Integer categoriaBusqueda;
     private Producto producto;
@@ -159,6 +160,14 @@ public class ProductoBean extends BaseBean implements Serializable {
 
     public void setCategoriaBusqueda(Integer categoriaBusqueda) {
         this.categoriaBusqueda = categoriaBusqueda;
+    }
+
+    public List<Producto> getProductosStock() {
+        return productosStock;
+    }
+
+    public void setProductosStock(List<Producto> productosStock) {
+        this.productosStock = productosStock;
     }
 
    
