@@ -51,10 +51,14 @@
                                     <h:outputText value="#{producto.marca}" />
                                 </p:column>
                                 <p:column headerText="Precio">
-                                    <h:outputText value="#{producto.precio}" />
+                                    <h:outputText value="#{producto.precio}" >
+                                    <f:convertNumber minFractionDigits="2" maxFractionDigits="2" currencySymbol="$"/>
+                                    </h:outputText>
                                 </p:column>
                                 <p:column headerText="Precio de Venta">
-                                    <h:outputText value="#{producto.precioVenta}" />
+                                    <h:outputText value="#{producto.precioVenta}" >
+                                    <f:convertNumber minFractionDigits="2" maxFractionDigits="2" currencySymbol="$"/>
+                                    </h:outputText>
                                 </p:column>
                                 <p:column headerText="Stock">
                                     <h:outputText value="#{producto.stock}" />
@@ -89,10 +93,14 @@
                                     <h:outputText value="#{producto.marca}" />
                                 </p:column>
                                 <p:column headerText="Precio">
-                                    <h:outputText value="#{producto.precio}" />
+                                    <h:outputText value="#{producto.precio}" >
+                                    <f:convertNumber minFractionDigits="2" maxFractionDigits="2" currencySymbol="$"/>
+                                    </h:outputText>
                                 </p:column>
                                 <p:column headerText="Precio de Venta">
-                                    <h:outputText value="#{producto.precioVenta}" />
+                                    <h:outputText value="#{producto.precioVenta}" >
+                                    <f:convertNumber minFractionDigits="2" maxFractionDigits="2" currencySymbol="$"/>
+                                    </h:outputText>
                                 </p:column>
                                 <p:column headerText="Stock">
                                     <h:outputText value="#{producto.stock}" />
@@ -157,14 +165,19 @@
                                     <h:outputText value="#{producto.cantidad}"  />
                                 </p:column>
                                 <p:column headerText="Valor Unitario">
-                                    <h:outputText value="#{producto.precio}"  />
+                                    <h:outputText value="#{producto.precio}"  >
+                                    <f:convertNumber minFractionDigits="2" maxFractionDigits="2" currencySymbol="$"/>
+                                    </h:outputText>
                                 </p:column>
                                 <p:column headerText="Valor Total">
-                                    <h:outputText value="#{detalleBean.getSub(producto.cantidad,producto.precio)}"  />
+                                    <h:outputText value="#{detalleBean.getSub(producto.cantidad,producto.precio)}"  >
+                                    <f:convertNumber minFractionDigits="2" maxFractionDigits="2" currencySymbol="$"/>
+                                    </h:outputText>
                                 </p:column>
                                 <f:facet name="footer">
-                                    Total a pagar $: <h:outputText value="#{detalleBean.totalSub}" />
-
+                                    Total a pagar $: <h:outputText value="#{detalleBean.totalSub}">
+                                    <f:convertNumber minFractionDigits="2" maxFractionDigits="2" currencySymbol="$"/>
+                                    </h:outputText>
                                 </f:facet>
                             </p:dataTable>
 

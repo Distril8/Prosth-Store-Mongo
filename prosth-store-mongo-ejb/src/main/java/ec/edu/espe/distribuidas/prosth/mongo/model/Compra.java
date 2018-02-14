@@ -28,6 +28,7 @@ public class Compra extends BaseEntity {
     @Reference
     private Proveedor proveedor;
     private Date fecha;
+    private String nombreProveedor;
     private BigDecimal valorTotal;
 
 
@@ -36,6 +37,14 @@ public class Compra extends BaseEntity {
 
     public Compra(Integer codigo) {
         this.codigo = codigo;
+    }
+
+    public String getNombreProveedor() {
+        return nombreProveedor;
+    }
+
+    public void setNombreProveedor(String nombreProveedor) {
+        this.nombreProveedor = nombreProveedor;
     }
 
     public Proveedor getProveedor() {

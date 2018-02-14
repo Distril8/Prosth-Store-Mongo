@@ -22,6 +22,9 @@
                     <p:column headerText="Descripcion">
                         <h:outputText value="#{proveedor.descripcion}" />
                     </p:column>
+                    <p:column headerText="Correo Electronico">
+                        <h:outputText value="#{proveedor.email}" />
+                    </p:column>
                 </p:dataTable>
                 <p:messages id="messages" showDetail="true" autoUpdate="true" closable="true" />
                 <p:commandButton value="Agregar" actionListener="#{proveedorBean.agregar()}" update="@form"/>
@@ -37,6 +40,8 @@
                         <p:inputText id="nombre" value="#{proveedorBean.proveedor.nombre}"  />
                         <p:outputLabel for="descripcion" value="Descripci&#243;n" />
                         <p:inputText id="descripcion" value="#{proveedorBean.proveedor.descripcion}"  />
+                        <p:outputLabel for="correo" value="Correo Electronico" />
+                        <p:inputText id="correo" value="#{proveedorBean.proveedor.email}"  />
                     </p:panelGrid>
                     <p:commandButton value="Aceptar" actionListener="#{proveedorBean.guardar}" update="@form" />
                     <p:commandButton value="Cancelar" actionListener="#{proveedorBean.cancelar}" update="@form" />

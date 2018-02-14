@@ -18,7 +18,7 @@ public class BaseBean implements Serializable{
     protected boolean enAgregar;
     protected boolean enModificar;
     protected boolean enDetalles;
-    
+    protected boolean enContacto;
     protected String titulo;
 
     public boolean isEnAgregar() {
@@ -33,6 +33,9 @@ public class BaseBean implements Serializable{
         return enDetalles;
     }
 
+    public boolean isEnContacto() {
+        return enContacto;
+    }
     public String getTitulo() {
         return titulo;
     }
@@ -51,7 +54,10 @@ public class BaseBean implements Serializable{
         this.enDetalles = true;
         this.titulo = "Detalles - ";
     }
-    
+    public void contacto() {
+        this.enContacto = true;
+        this.titulo = "Contactos - ";
+    }
     public void reset() {
         this.enAgregar = false;
         this.enModificar = false;
@@ -59,6 +65,6 @@ public class BaseBean implements Serializable{
     }
     
     public boolean isHabilitaForm() {
-        return this.enAgregar || this.enDetalles || this.enModificar;
+        return this.enAgregar || this.enContacto || this.enModificar;
     }
 }

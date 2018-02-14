@@ -9,6 +9,7 @@ C:\Users\DAVID\Documents\GitHub\Prosth-Store-Mongo\prosth-store-mongo-ejb\src\ma
 C:\Users\DAVID\Documents\GitHub\Prosth-Store-Mongo\prosth-store-mongo-ejb\src\main\java\ec\edu\espe\distribuidas\nosql\mongo\BaseEntity.java
 C:\Users\DAVID\Documents\GitHub\Prosth-Store-Mongo\prosth-store-mongo-ejb\src\main\java\ec\edu\espe\distribuidas\prosth\mongo\dao\CompraDAO.java
 C:\Users\DAVID\Documents\GitHub\Prosth-Store-Mongo\prosth-store-mongo-ejb\src\main\java\ec\edu\espe\distribuidas\prosth\mongo\model\Conductor.java
+C:\Users\DAVID\Documents\GitHub\Prosth-Store-Mongo\prosth-store-mongo-ejb\src\main\java\ec\edu\espe\distribuidas\prosth\mongo\model\Entrega.java
 C:\Users\DAVID\Documents\GitHub\Prosth-Store-Mongo\prosth-store-mongo-ejb\src\main\java\ec\edu\espe\distribuidas\prosth\mongo\service\ProveedorService.java
 C:\Users\DAVID\Documents\GitHub\Prosth-Store-Mongo\prosth-store-mongo-ejb\src\main\java\ec\edu\espe\distribuidas\prosth\mongo\dao\ProductoDAO.java
 C:\Users\DAVID\Documents\GitHub\Prosth-Store-Mongo\prosth-store-mongo-ejb\src\main\java\ec\edu\espe\distribuidas\prosth\mongo\enums\ModoPagoEnum.java
@@ -19,11 +20,13 @@ C:\Users\DAVID\Documents\GitHub\Prosth-Store-Mongo\prosth-store-mongo-ejb\src\ma
 C:\Users\DAVID\Documents\GitHub\Prosth-Store-Mongo\prosth-store-mongo-ejb\src\main\java\ec\edu\espe\distribuidas\prosth\mongo\NewSessionBean.java
 C:\Users\DAVID\Documents\GitHub\Prosth-Store-Mongo\prosth-store-mongo-ejb\src\main\java\ec\edu\espe\distribuidas\prosth\mongo\service\CategoriaService.java
 C:\Users\DAVID\Documents\GitHub\Prosth-Store-Mongo\prosth-store-mongo-ejb\src\main\java\ec\edu\espe\distribuidas\prosth\mongo\model\DetalleCompra.java
+C:\Users\DAVID\Documents\GitHub\Prosth-Store-Mongo\prosth-store-mongo-ejb\src\main\java\ec\edu\espe\distribuidas\prosth\mongo\service\EntregaService.java
 C:\Users\DAVID\Documents\GitHub\Prosth-Store-Mongo\prosth-store-mongo-ejb\src\main\java\ec\edu\espe\distribuidas\prosth\mongo\model\Categoria.java
 C:\Users\DAVID\Documents\GitHub\Prosth-Store-Mongo\prosth-store-mongo-ejb\src\main\java\ec\edu\espe\distribuidas\nosql\mongo\config\ConfigReader.java
 C:\Users\DAVID\Documents\GitHub\Prosth-Store-Mongo\prosth-store-mongo-ejb\src\main\java\ec\edu\espe\distribuidas\prosth\mongo\dao\DetalleDAO.java
 C:\Users\DAVID\Documents\GitHub\Prosth-Store-Mongo\prosth-store-mongo-ejb\src\main\java\ec\edu\espe\distribuidas\prosth\mongo\service\CamionService.java
 C:\Users\DAVID\Documents\GitHub\Prosth-Store-Mongo\prosth-store-mongo-ejb\src\main\java\ec\edu\espe\distribuidas\nosql\mongo\MongoPersistence.java
+C:\Users\DAVID\Documents\GitHub\Prosth-Store-Mongo\prosth-store-mongo-ejb\src\main\java\ec\edu\espe\distribuidas\prosth\mongo\dao\EntregaDAO.java
 C:\Users\DAVID\Documents\GitHub\Prosth-Store-Mongo\prosth-store-mongo-ejb\src\main\java\ec\edu\espe\distribuidas\prosth\mongo\model\Compra.java
 C:\Users\DAVID\Documents\GitHub\Prosth-Store-Mongo\prosth-store-mongo-ejb\src\main\java\ec\edu\espe\distribuidas\nosql\mongo\config\ConfigDTO.java
 C:\Users\DAVID\Documents\GitHub\Prosth-Store-Mongo\prosth-store-mongo-ejb\src\main\java\ec\edu\espe\distribuidas\prosth\mongo\model\Detalle.java
