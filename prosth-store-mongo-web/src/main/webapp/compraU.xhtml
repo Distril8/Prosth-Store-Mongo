@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//ES" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:ui="http://java.sun.com/jsf/facelets">
+    <ui:composition template="/templates/plantillaUsuario.xhtml">
+        <ui:define name="contenido">
+            <p:panel id="mainPnl" header="Compras" style="width: 80%; margin: auto;">
+                <h:dataTable value="#{carritoBean.carrito}" var="productos" rules="all" border="1" cellpadding="5" cellspacing="0" rendered="#{not empty carritoBean.carrito}">                            
+                    <h:column>
+                        <f:facet name="header">
+                            <h:outputText value="producto"/>
+                        </f:facet>
+                        <h:outputText value="#{producto.nombre}"/>
+                    </h:column>
+                    <h:column>
+                        <f:facet name="header">
+                            <h:outputText value="marca"/>
+                        </f:facet>
+                        <h:outputText value="#{producto.marca}"/>
+                    </h:column>
+                    
+                    <h:column>
+                        <f:facet name="header">
+                            <h:outputText value="precio"/>
+                        </f:facet>
+                        <h:outputText value="#{producto.precio}"/>
+                    </h:column>
+                  
+                </h:dataTable>
+                <br/>
+                <br/>
+                <h:outputLabel value="Total: $"/>
+                <h:outputText value="#{carritoBean.totalCompra}" rendered="#{not empty carritoBean.carrito}"/>
+                <br/>
+                <br/>
+               
+                <h:message id="mensajeError" for="mensajeError"/>
+            </p:panel>
+        </ui:define>
+    </ui:composition>
+</html>

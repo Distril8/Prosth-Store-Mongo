@@ -5,8 +5,10 @@
  */
 package ec.edu.espe.distribuidas.prosth.mongo.web;
 
+import ec.edu.espe.distribuidas.prosth.mongo.model.Carrito;
 import ec.edu.espe.distribuidas.prosth.mongo.model.Categoria;
 import ec.edu.espe.distribuidas.prosth.mongo.model.Producto;
+import ec.edu.espe.distribuidas.prosth.mongo.service.CarritoService;
 import ec.edu.espe.distribuidas.prosth.mongo.service.CategoriaService;
 import ec.edu.espe.distribuidas.prosth.mongo.service.ProductoService;
 import ec.edu.espe.distribuidas.prosth.mongo.web.util.FacesUtil;
@@ -34,16 +36,23 @@ public class ProductoAdminBean extends BaseBean implements Serializable {
     private Producto producto;
     private Producto productoSel;
 
+    private Carrito carrito;
+    private List<Carrito> carritos;
+    
     @Inject
     private CategoriaService categoriaService;
     @Inject
     private ProductoService productoService;
+    @Inject
+    private CarritoService carritoService;
 
     @PostConstruct
     public void init() {
         this.categorias = this.categoriaService.obtenerTodos();
         this.productos = this.productoService.obtenerTodos();
+        this.carritos = this.carritoService.obtenerTodos();
         this.producto = new Producto();
+        this.carrito = new Carrito();
     }
 
     public void cambiarFiltro() {
@@ -52,7 +61,9 @@ public class ProductoAdminBean extends BaseBean implements Serializable {
     }
 
     public void buscar() {
-        this.productos = this.productoService.buscarPorTipo(this.categoriaBusqueda);
+        Categoria categoriaNueva = this.categoriaService.obtenerPorCodigo(this.categoriaBusqueda);
+        this.productos = this.productoService.buscarPorTipo(categoriaNueva);
+        System.out.println("Valor para categoriaBusqueda: " + categoriaNueva.getNombre());
     }
 
     @Override
@@ -95,6 +106,14 @@ public class ProductoAdminBean extends BaseBean implements Serializable {
         super.reset();
         this.producto = new Producto();
         this.productos = this.productoService.obtenerTodos();
+    }
+    
+    public void guardarEnCarrito(Integer codigoProducto){
+        this.carrito.setCodigo(carritos.size()+1);
+        this.carrito.setProducto(codigoProducto);
+        this.carritoService.crear(this.carrito);
+        super.reset();
+        this.carrito = new Carrito();
     }
 
     public void setFiltro(String filtro) {
